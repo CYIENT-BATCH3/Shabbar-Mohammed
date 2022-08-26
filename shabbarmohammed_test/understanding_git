@@ -1,0 +1,10 @@
+1.Good platform to share work will friends who are work with us and also github is a one of the best private tool to we can save our files and codes with out sharing any of rather than our teammates.
+2.
+a)Repository is a folder with stores our data.
+b)push means uploading a file to the repository
+c)pull means importing a file from reposiory
+d)commit is snapshot of your repository
+e)branch is a new folder you upload that changes you want to make in the main file and after approval of pull up request you can merge them.
+f)clobe is making the exact copy of main file
+g)The changes you make in main file will be reviwed by the owner then after you can merge them.
+h)After create branch and making changes and comparing it the request will be reviewed by the owner and if it gets approved and them you can merge both main file and branch file.
