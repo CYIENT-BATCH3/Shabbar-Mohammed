@@ -1,0 +1,9 @@
+#include <stdio.h>
+enum birthday{sha=21,athi=7,nav=27,krish=8,nave=25,akhi=12};
+int main()
+{
+   enum birthday date;
+   date=nav;
+   printf("%d\n",date);
+   return 0;
+}

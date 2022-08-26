@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+    int a=0,b=0; //INTIALIZING a,b
+    
+    (a&&b)?printf("TRUE"):printf("FALSE");
+    printf("\n");
+    (a||b)?printf("TRUE"):printf("FALSE"); 
+    printf("\n");
+    !(a>=b)&&(a==b)||(a<=b)?printf("TRUE"):printf("FALSE");//USING CONDITIONAL OPERATOR TO CHECK WHEATHER TWO OPERANDS ARE EQUAL OR NOT
+}

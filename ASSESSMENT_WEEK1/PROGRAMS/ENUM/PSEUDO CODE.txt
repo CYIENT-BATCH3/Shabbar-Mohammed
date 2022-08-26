@@ -1,0 +1,14 @@
+step-1:Start program
+step-2:Creating enum as birthday
+step-3:creating variable date to the brithday
+step-4:Assigning value to the date
+step-5:Printing the date
+step-6:End program
+
+
+Create a new Branch
+Make changes and add Commits
+Open a Pull Request
+Review
+Deploy
+Merge

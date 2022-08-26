@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+//PRINTING SIZE OF DATA TYPES WITH THE HELP OF sizeof KEYWORD
+printf("THE SIZE OF INT DATA TYPE : %ld\n",sizeof(int));
+printf("THE SIZE OF  SHORT INT DATA TYPE : %ld\n",sizeof(short int));
+printf("THE SIZE OF UNSIGNED INT DATA TYPE : %ld\n",sizeof(unsigned int));
+printf("THE SIZE OF UNSIGNED SHORT INT DATA TYPE : %ld\n",sizeof(unsigned short int));
+printf("THE SIZE OF LONG INT DATA TYPE : %ld\n",sizeof(long int));
+printf("THE SIZE OF UNSIGNED LONG INT DATA TYPE : %ld\n",sizeof(unsigned long int));
+printf("THE SIZE OF LONG LONG INT DATA TYPE : %ld\n",sizeof(long long int));
+printf("THE SIZE OF UNSIGNED LONG LONG INT DATA TYPE : %ld\n",sizeof(unsigned long long int));
+printf("THE SIZE OF FLOAT DATA TYPE : %ld\n",sizeof(float));
+printf("THE SIZE OF DOUBLE DATA TYPE : %ld\n",sizeof(double));
+printf("THE SIZE OF CHAR DATA TYPE : %ld\n",sizeof(char));
+}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j,b[100],rem;  //INITALIZING VARIABLES
+    printf("ENTER THE VALUE TO CONVERT INTO BINARY\n");
+    scanf("%d",&n);  //READING IP VALUES FROM KEYBOARD
+//CONVERTING DECIMAL TO 0 AND 1(LCM)
+for(i=0;n>0;i++)
+{
+    b[i]=n%2;
+    n=n/2;
+    printf("%d",b[i]);
+}
+printf("\n");
+//REVERSING BITS 
+for(i=i-1;i>=0;i--)
+{
+    
+    printf("%d",b[i]);
+}
+}

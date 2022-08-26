@@ -1,0 +1,23 @@
+#include<stdio.h>
+//DECLARING STRUCTURE
+struct employee{
+    int ID;
+    char NAME;
+    int SALARY;
+    int CELL;
+}DETAILS;
+int main()
+{
+//READING IP VALES FROM THE KEYBOARD
+printf("ENTER THE DETAILS OF EMPLOYEE\n");
+scanf("%d",&DETAILS.ID);
+scanf("%s",&DETAILS.NAME);
+scanf("%d",&DETAILS.SALARY);
+scanf("%d",&DETAILS.CELL);
+//PRITING THE DETAILS OF EMPLOYEE
+printf("PRINTING THE EMPLOYEE DETAILS\n");
+printf("%d\n",DETAILS.ID);
+printf("%c\n",DETAILS.NAME);
+printf("%d\n",DETAILS.SALARY);
+printf("%d\n",DETAILS.CELL);
+}

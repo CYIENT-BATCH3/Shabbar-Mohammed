@@ -1,0 +1,17 @@
+#include <conio.h>
+#include <stdio.h>
+int main()
+{
+	char ch;
+	char str[5];
+	printf("Enter any character: ");
+
+	// Reads a character
+	ch = getchar();
+
+	// Displays that character
+	putchar(ch);
+//	gets(str);
+//	puts(str);
+	return 0;
+}

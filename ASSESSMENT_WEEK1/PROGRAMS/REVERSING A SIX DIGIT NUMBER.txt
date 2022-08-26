@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+//DECLARING VARIABLES
+    int n;
+int d1,d2,d3,d4,d5,d6,rev;
+printf("ENTER THE 6 DIGIT NUMBER TO REVERSE\n");
+scanf("%d",&n);     //READING I/P VALUES
+    printf("6 DIGIT NUMBER BEFORE REVERSE :%d\n",n);
+    d1=n%10;n=n/10;
+    d2=n%10;n=n/10;
+    d3=n%10;n=n/10;
+    d4=n%10;n=n/10;
+    d5=n%10;n=n/10;
+    d6=n%10;n=n/10;
+    rev=d1*100000+d2*10000+d3*1000+d4*100+d5*10+d6;
+    printf("6 DIGIT NUMBER AFTER REVERSE :%d\n",rev);   //PRINTING O/P
+}

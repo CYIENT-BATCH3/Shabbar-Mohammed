@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void) 
+{
+	unsigned char var;
+	printf("Enter decimal value b/w 0 to 255: ");
+	scanf("%d", &var);   //READING I/P
+	printf("var = %d\n", var);
+
+	printf("Enter octal value b/w 0 to 377: ");
+	scanf("%o", &var);   // READING I/P
+	printf("var = %o\n", var);
+
+	printf("Enter hexadecimal value b/w 0 to ff: ");
+	scanf("%x", &var);
+	printf("var = %x\n", var);
+
+	return 0;
+}

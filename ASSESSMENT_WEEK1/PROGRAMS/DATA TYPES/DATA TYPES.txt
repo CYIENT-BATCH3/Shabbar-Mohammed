@@ -1,0 +1,16 @@
+#include<stdio.h> 
+int main()
+{
+ int a;    //Declaring int variable
+ float b;  //Declaring float variable
+ char c;   //Declaring char variable
+ printf("ENTER THE INTEGER VALUE OF a\n");
+ scanf("%d",&a);  //Reading integer inputs from keyboard with the help of scanf statement
+ printf("ENTER THE FLOAT VALUE OF b\n");
+ scanf("%f",&b);  //Reading float inputs from keyboard with the help of scanf statement
+ printf("ENTER THE CHARACTER VALUE OF c\n");
+ scanf(" %c",&c);  //Reading char inputs from keyboard with the help of scanf statement
+ printf("The integer is =:%d\n",a);  //Printing integer variable with the help of printf statement
+ printf("The float is =:%f\n",b);   //Printing float variable with the help of printf statement
+ printf("The char is =:%c\n",c);   //Printing character variable with the help of printf statement
+}

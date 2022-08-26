@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{ 
+//DECLARING VARIABLES
+int a,b,c;
+printf("ENTER THE 3 NUMBER\n");;
+scanf("%d %d %d",&a,&b,&c);   // READING I/P VALUES
+(a>b && a>c)?printf("a is bigger %d",a):(b>c)?printf("b is bigger %d",b):printf("c is bigger %d",c);
+//printf("%d",hev);
+}

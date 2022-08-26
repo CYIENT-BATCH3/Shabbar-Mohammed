@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+char ch1;
+char ch2;
+char ch3;
+char ch4;
+char ch5;
+char ch6;
+char ch7;
+char ch8;
+char ch9;
+char ch10;
+printf("ENTER THE CHARACTER\n");
+scanf(" %c",&ch1);
+scanf(" %c",&ch2);
+scanf(" %c",&ch3);
+scanf(" %c",&ch4);
+scanf(" %c",&ch5);
+scanf(" %c",&ch6);
+scanf(" %c",&ch7);
+scanf(" %c",&ch8);
+scanf(" %c",&ch9);
+scanf(" %c",&ch10);
+printf("************************************\n");
+printf("ASCII VALUES OF INPUT CHARACTERS\n");
+printf("%d\n",ch1);
+printf("%d\n",ch2);
+printf("%d\n",ch3);
+printf("%d\n",ch4);
+printf("%d\n",ch5);
+printf("%d\n",ch6);
+printf("%d\n",ch7);
+printf("%d\n",ch8);
+printf("%d\n",ch9);
+printf("%d\n",ch10);
+}

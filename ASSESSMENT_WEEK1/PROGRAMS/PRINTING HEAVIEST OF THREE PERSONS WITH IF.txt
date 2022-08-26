@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+int person_1,person_2,person_3;
+//READING 3  PERSONS WEIGHT
+printf("ENTER THE VALUES OF 3 PERSONS\n");
+printf("ENTER THE VALUES OF person_1\n");
+scanf("%d",&person_1);
+printf("ENTER THE VALUES OF person_2\n");
+scanf("%d",&person_2);
+printf("ENTER THE VALUES OF person_3\n");
+scanf("%d",&person_3);
+if((person_1>person_2)&&(person_1>person_3))   //CONDITION TO CHECK PERSON_1 IS HEAVIER THAN 2&3
+{
+    printf("person_1 IS HEAVIER");
+}
+ if((person_2>person_1)&&(person_2>person_3))   //CONDITION TO CHECK PERSON_2 IS HEAVIER THAN 1&3
+{
+    printf("person_2 IS HEAVIER");
+}
+if((person_3>person_1)&&(person_3>person_2))   //CONDITION TO CHECK PERSON_3 IS HEAVIER THAN 2&3
+{
+    printf("person_3 IS HEAVIER");
+}
+}

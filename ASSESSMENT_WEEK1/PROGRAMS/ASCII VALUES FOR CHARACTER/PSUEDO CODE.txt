@@ -1,0 +1,5 @@
+step-1:Start program
+step-2:Declaring 10 character variables
+step-3:Read the input character variables from the keyboard using scanf statement
+step-4:Printing the charater variables as int using format specifier as %d so it prints ASCII values of character
+step-5:End program

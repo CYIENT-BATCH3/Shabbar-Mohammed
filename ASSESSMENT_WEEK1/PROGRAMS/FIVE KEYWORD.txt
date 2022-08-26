@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+//DECLARING I/P VARIABLES
+int a;
+float b;
+char ch;
+//READING I/P VALUES
+printf("ENTER THE VALUE OF A\n");
+scanf("%d",&a);
+printf("ENTER THE VALUE OF B\n");
+scanf("%f",&b);
+printf("ENTER THE VALUE OF CH\n");
+scanf(" %c",&ch);
+printf("SIZE OF INTEGER\n");
+printf("%ld\n",sizeof(int));
+int i=5;
+
+if(i>2)
+{
+    printf("TRUE");
+}
+else
+{
+    printf("FALSE");
+}
+}
