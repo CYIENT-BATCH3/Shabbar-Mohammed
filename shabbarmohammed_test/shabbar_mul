@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+int a,b,c;  //initializing integer variables
+a=10;
+b=50;
+//performing arithematic operations
+c=a+b;   
+printf("%d",c);
+c=a-b;
+printf("%d",c);
+c=a*b;
+printf("%d",c);
+}
