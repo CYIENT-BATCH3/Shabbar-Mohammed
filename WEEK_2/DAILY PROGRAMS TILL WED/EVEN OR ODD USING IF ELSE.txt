@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+// DECLARING INPUT VARIABLES 
+    int number;
+    printf("ENTER THE NUMBER TO CHECK IT IS ODD OR EVEN\n");
+    scanf("%d",&number);  // READING INPUT FROM KEYBOARD
+    if(number%2==0)  //  CHECKING CONDITION FOR EVEN OR NOT
+    {
+        printf("GIVEN NUMBER IS EVEN\n");
+    }
+    else
+    {
+        printf("GIVEN NUMBER IS ODD\n");
+    }
+}

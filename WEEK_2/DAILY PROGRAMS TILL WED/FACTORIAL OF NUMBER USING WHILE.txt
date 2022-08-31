@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main ()
+{
+// DEACLARING VARIABLES
+  int number,i,f;
+  printf("ENTER THE NUMBER\n");
+  scanf("%d",&number);   //READING INPUTS FROM KEYBOARD
+  f=i=1; 
+// FACTORIAL OP
+  while(i<=number)
+  {
+      f *=i;
+      i++;
+  }
+  printf("FACTORIAL OF NUMBER 5 IS:%d",f);
+  
+}

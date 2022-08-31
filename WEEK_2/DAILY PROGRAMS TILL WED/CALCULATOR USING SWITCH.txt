@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main ()
+{
+//DECLARING VARIABLES
+  float a,b;
+  char calculator;
+  printf("ENTER OPERATOR\n");
+  scanf(" %c",&calculator);  //READING OP TO PERFORM OPERATION
+  printf("ENTER THE NUMBERS\n");
+  scanf("%f%f",&a,&b);   // READING INPUT VARIABLES TO DO OPERATIONS
+// TO SELECT OPERATION WANT TO DO SO WE USE SWITCH CASE
+switch(calculator)
+{
+    case '+':
+    printf("%f + %f =%f",a,b,a+b);
+    break;
+    case '-':
+    printf("%f - %f =%f",a,b,a-b);
+    break;
+    case '*':
+    printf("%f * %f =%f",a,b,a*b);
+    break;
+    case '/':
+    printf("%f / %f =%f",a,b,a/b);
+    break;
+    default:
+    printf("ERROR");
+    break;
+    
+}
+}

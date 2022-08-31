@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+   int marks;
+   printf("ENTER THE VALUES OF MARKS\n");
+   scanf("%d",&marks);  // READING INPUT FROM KEYBOARD
+// CHECKING CONDITIONS AND PRINTING GRADES ACCORDING TO THE PERCENTAGE
+if(marks>=70 && marks<=100)
+{
+    printf("STUDENT GOT DISTINCTION\n");
+}
+else if(marks>=60 && marks<70)
+{
+    printf("STUDENT GOT FIRST CLASS\n");
+}
+else if(marks>=50 && marks<60)
+{
+    printf("STUDENT GOT SECOND CLASS\n");
+}
+else if(marks>=35 && marks<50)
+{
+    printf("STUDENT GOT PASSED\n");
+}
+else
+{
+    printf("STUDENT GOT FAILED\n");
+}
+}

@@ -1,0 +1,42 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int v_driver_door;
+    printf("enter the hexa decimal value\n");
+    scanf("%x",&v_driver_door);
+    printf("%d",v_driver_door);
+    int b0,b1,b2,b3,b4,b5,b6,b7;
+    b7=v_driver_door%2;v_driver_door=v_driver_door/2;
+    b6=v_driver_door%2;v_driver_door=v_driver_door/2;
+    b5=v_driver_door%2;v_driver_door=v_driver_door/2;
+    b4=v_driver_door%2;v_driver_door=v_driver_door/2;
+    b3=v_driver_door%2;v_driver_door=v_driver_door/2;
+    b2=v_driver_door%2;v_driver_door=v_driver_door/2;
+    b1=v_driver_door%2;v_driver_door=v_driver_door/2;
+    b0=v_driver_door%2;v_driver_door=v_driver_door/2;
+    printf("\n%d%d%d%d %d%d%d%d",b7,b6,b5,b4,b3,b2,b1,b0);
+    if(b6==0){
+        printf("\nDRIVER SIDE RIGHT DOOR IS CLOSED\n");
+    }
+    else
+    {
+        printf("DRIVER SIDE RIGHT DOOR IS OPEN\n");
+    }
+    if(b7==0)
+    {
+        printf("DRIVER SIDE LEFT DOOR IS CLOSE\n");
+    }
+    else
+    {
+        printf("DRIVER SIDE LEFT DOOR IS OPEN\n");
+    }
+}

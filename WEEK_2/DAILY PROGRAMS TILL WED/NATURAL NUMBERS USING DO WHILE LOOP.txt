@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main ()
+{
+  int number,i;
+  printf("ENTER THE NUMBER\n");
+  scanf("%d",&number);  // READING INPUTS FROM KEYBOARD
+  i=1;
+// PRINTING ALL NATURAL NUMBER USING DO WHILE LOOP
+  do
+  {
+      printf("%d",i);
+       i++;
+  }
+
+  while(i<=number);
+   
+}
