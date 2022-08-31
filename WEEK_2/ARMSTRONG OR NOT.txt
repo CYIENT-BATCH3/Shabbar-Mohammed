@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>    // math.h to perform maths operations like power
+int main ()
+{
+  int number,rem,res=0,n;  //Declaring variables
+  printf("ENTER THE NUMBER TO CHECK ARMSTRONG OR NOT\n");
+  scanf("%d",&number);  //Reading number to check ARMSTRONG or NOT
+  while(number!=0)     // condition to check how many digit number
+  {
+      number=number/10;
+      ++n;   
+  }
+  while(rem>0)    
+  {
+      rem=number%10;
+      res +=pow(rem,n);
+      // res=res+rem*rem*rem;
+      number /=10;
+  }
+  if(number==res)  // condition to check both the numbers(calculated and input numbers) same or not
+  {
+      printf("ARMSTRONG NUMBER\n");  // if both are same print it is armstrong
+  }
+  else
+  {
+      printf("NOT ARMSTRONG\n");   // if not same print not an armstrong
+  }
+}

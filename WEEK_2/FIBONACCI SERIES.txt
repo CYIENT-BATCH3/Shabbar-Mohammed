@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+int fibonacci_num,first_term=0,second_term=1,next_term; //declaring variables
+printf("ENTER THE NUMBER\n");
+scanf("%d",&fibonacci_num);  // giving input from keyboard
+printf("%d\t",first_term);  //printing first term
+printf("%d\t",second_term);
+next_term=first_term+second_term;
+  for(int i=3;i<=fibonacci_num;i++)
+  {
+       printf("%d\t",next_term);  // printing next_term after adding
+      first_term=second_term;
+      second_term=next_term;
+      next_term=first_term+second_term;// last digit is getting added
+       if(next_term>=fibonacci_num)
+      break;
+      //printf("%d\t",next_term);
+  }
+  
+ // printf("%d\t",fibonacci_num);
+}

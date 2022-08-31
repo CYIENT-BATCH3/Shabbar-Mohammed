@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+int original_number,reverse_number,d1,d2,d3,number;    // declaring variables
+printf("ENTER THE NUMBER TO CHECK PALINDROME OR NOT\n");
+scanf("%d",&original_number);    // reading input from keyboard
+number=original_number;
+while(original_number!=0)
+{
+    /*res =original_number%10;
+    //reverse_number=res;
+    original_number /=10;
+    reverse_number=res*100;
+    printf("%d",reverse_number);*/
+    d1=original_number%10;original_number /=10;
+    d2=original_number%10;original_number /=10;
+    d3=original_number%10;original_number /=10;
+    reverse_number=d1*100+d2*10+d3;  // reversing the given number
+    //printf("%d",reverse_number);
+}
+printf("AFTER REVERSING A NUMBER :%d",reverse_number);
+
+if(number==reverse_number)  //checking if both are equal then print palindrome otherwise not
+{
+    printf("\nGIVEN NUMBER IS PALINDROME\n");
+}
+else
+{
+    printf("\nGIVEN NUMBER IS NOT A PALINDROME\n");
+}
+}
