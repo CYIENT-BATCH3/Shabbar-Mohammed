@@ -1,0 +1,36 @@
+#include<stdio.h>
+int
+main ()
+{
+  int arr[10][20];		// deaclaring two dimensional array
+  int n, m, i, j, sum = 0;
+  printf ("ENTER THE NUMBERS\n");
+  scanf ("%d%d", &n, &m);	// taking inputs from keyboard for number of rows and column
+  printf ("ENTER THE ARRAY ELEMENTS\n");
+  for (i = 0; i < n; i++)	// first for loop to read elements in row
+    {
+      for (j = 0; j < m; j++)	// second for loop is to read elements in column
+	{
+	  scanf ("%d", &arr[i][j]);
+
+	}
+    }
+  printf ("ARRAY ELEMENTS ARE\n");
+  
+  for (i = 0; i < n; i++)  //printing row elements in array
+    {
+      puts ("\n");
+      for (j = 0; j < m; j++)   //printing column in array
+	{
+	  printf ("%d\t", arr[i][j]);
+	  sum +=arr[i][j];   // condition for sum of array elements
+	  //printf("\n%d\n",sum);
+	}
+	
+   //printf("SUM OF ARRAY ELEMENTS ARE:\n%d\n",sum);
+    }
+     printf("\nSUM OF ARRAY ELEMENTS ARE:%d\n",sum);    // printing the sum of array elements
+  //sum += arr[i][j];
+  //printf ("\n%d\n", sum);
+
+}

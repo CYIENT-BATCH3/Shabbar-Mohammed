@@ -1,0 +1,56 @@
+ #include<stdio.h>
+int main()
+{
+    // DECLARING VARIABLES AND ASSIGNING VIN,vin_2,vin_3 STARING SERIES VALUES
+char ec[20];
+int n,vin=109186,vin_2=109207,vin_3=109228,s,n2;
+int a[20],j;
+int i;
+int plant,s2,s3;
+printf("SELECT THE PLANT\n");
+scanf("%d",&plant);
+
+s=vin;
+// SELECTING PLANT 1 TO PRINT VEHICLE SERIES
+if(plant==1)
+{
+printf("THE VIN FOR 20 VEHICLES OF FIRST PLANT IS:\n");
+printf("\n1CYLE10PZYE %d\n",s);
+    if(vin==s)
+    {
+        for(int j=0;j<20;j++){
+        vin++;
+        printf("\n1CYLE10PZYE %d\n",vin);
+        }
+    }
+}
+
+// SELECTING PLANT 2 TO PRINT 20 VEHICLE SERIES NUMBERS
+if(plant==2)
+{
+    printf("THE VIN FOR 20 VEHICLES OF SECOND PLANT IS:\n");
+    printf("\n2CYLE10PZYH %d\n",vin_2);
+    s2==vin_2;
+    if(vin_2==s2)
+    {
+        for(int j=0;j<20;j++){
+        vin_2++;
+        printf("\n1CYLE10PZYH %d\n",vin_2);
+        }
+    }
+}
+// SELECTING PLANT 3 TO PRINT 20 VEHICLE SERIES OF PLANT 3
+if(plant==3)
+{
+printf("THE VIN FOR 20 VEHICLES OF THIRD PLANT IS:\n");
+printf("\n3CYLE10PZYP %d\n",vin_3);
+s3=vin_3;
+    if(vin_3==s3)
+    {
+        for(int j=0;j<20;j++){
+        vin_3++;
+        printf("\n3CYLE10PZYP %d\n",vin_3);
+        }
+    }
+}
+}

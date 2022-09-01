@@ -1,0 +1,16 @@
+ #include<stdio.h>
+int main()
+{
+    //declaring and giving array elements
+    int b[]={1,2,3,4,5};
+    char a[2]={'A','B','C','D','E'};   // if array size is not given then it takes the size as number of array elements
+    for(int i=0;i<5;i++)
+    {
+        printf("%d\n",b[i]);
+    }
+    // if we print excess values than given it prints garbage values of remaining
+    for(int j=0;j<9;j++)
+    {
+        printf("%c\n",a[j]);
+    }
+}

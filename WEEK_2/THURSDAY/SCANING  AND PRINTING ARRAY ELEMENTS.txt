@@ -1,0 +1,17 @@
+ #include<stdio.h>
+int main()
+{
+int a[10],n,i;    // DECLARATION OF ELEMENTS
+printf("ENTER THE NUMBER OF ELEMENTS\n");
+scanf("%d",&n);  //reading number of elements 
+printf("ENTER THE ELEMENTS\n");
+for(i=0;i<n;i++)   // for loop to read elements from the keyboard
+{
+    scanf("%d",&a[i]);  
+}
+printf("THE ARRAY ELEMENTS ARE:\n");
+  for(i=0;i<n;i++)   // for loop to print elements
+   {
+           printf("%d\t",a[i]);
+   }
+}

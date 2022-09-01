@@ -1,0 +1,27 @@
+ #include<stdio.h>
+int main()
+{
+    char arr[50];
+    gets(arr);
+    puts(arr);
+   // for(int i=0;i<17;i++)
+   // {
+   //     printf("%c",arr[i]);
+   // }
+    if(arr[10]=='E')
+    {
+        printf("\nVEHICLE IS FROM PLANT 1\n");
+    }
+    else if(arr[10]=='H')
+    {
+    printf("\nVEHICLE IS FROM  PLANT 2\n");
+    }
+    else if(arr[10]=='P')
+    {
+        printf("\nVEHICLE IS FROM  PLANT 3\n");
+    }
+    else
+    {
+        printf("\nINVALID VEHICLE\n");
+    }
+}
