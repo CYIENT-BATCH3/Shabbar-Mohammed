@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main ()
+{
+  int arr[10][20][50];		// deaclaring three dimensional array
+  int n, m, i, j,k,o;
+  printf ("ENTER THE NUMBERS\n");
+  scanf ("%d%d%d", &n, &m,&o);	// taking inputs from keyboard for number of rows and column
+  printf ("ENTER THE ARRAY ELEMENTS\n");
+  for (i = 0; i < n; i++)	// first for loop to read elements in row
+    {
+      for (j = 0; j < m; j++)	// second for loop is to read elements in column
+	{
+	  for (k= 0; k < o; k++)  // third for loop for third dimensional array
+	  {
+	      
+	  
+	  scanf ("%d", &arr[i][j][k]);    //reading the inputs from keyboard for three dimensional array
+
+	}
+    }}
+  printf ("ARRAY ELEMENTS ARE\n");
+  
+  for (i = 0; i < n; i++)  //printing row elements in array
+    {
+      puts ("\n");
+      for (j = 0; j < m; j++)   //printing column in array
+	{
+	    puts("\n");
+	    for (k = 0; k < o; k++)    //for third dimensional
+	    {
+	  printf ("%d\t", arr[i][j][k]);
+	  
+	}
+	}
+	}
+    }
+    
