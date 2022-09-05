@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+    //declaring the arrays of char and initializing values
+    char str[]="welldone";
+    char str1[50]="welldone";
+    char str2[9]={'w','e','l','l','d','o','n','e'};
+    char str3[14]={'w','e','l','l','d','o','n','e'};
+    
+   //printing the strings
+    printf("String is:%s\n",str);
+    printf("String1 is:%s\n",str1);
+    printf("String2 is:%s\n",str2);
+    //printf("String3 is:%s\n",str3);
+}

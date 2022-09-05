@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    char str[200];
+    int i;
+    printf("Enter the string:\n");
+    scanf("%[^\n]s", str);
+    i=strlen(str);    //inbuiltfunction to print string length
+    printf("%d",i);   //printing the length of the string 
+}
+   

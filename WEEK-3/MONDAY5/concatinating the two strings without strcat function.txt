@@ -1,0 +1,37 @@
+/*ALGORITHM
+s-1:Give the string value and initialize count
+s-2:Now find the length of the strings with the help of strlen function
+S-3:Now after the length of the first string concatinate it the second string
+s-4:str1[length+i]=str2[i];   copying the elements of second string to the first string
+s-5:printing the concatinated string*/
+
+#include <stdio.h>
+#include <string.h>
+
+void
+main ()
+{
+  char str1[100] = "good";	//declaring and initializing values to the char array
+  char str2[100] = "morning";	//declaring and initializing values to the char array
+
+  int i, length1, length2;
+
+  printf ("Enter the string -1:\n");
+  puts (str1);			//printing the first string with the help of puts statement
+
+  printf ("Enter the string -2:\n");
+  puts (str2);			//printing the second string with the help of puts statement
+  length1 = strlen (str1);	//finding the length of first string with the help of strlen function
+  printf ("LENGTH OF FIRST STRING IS:%d\n", length1);
+  length2 = strlen (str2);	//finding the length of first string with the help of strlen function
+  printf ("LENGTH OF SECOND STRING IS:%d\n", length2);
+
+  for (i = 0; i < length2; i++)
+    {
+      str1[length1 + i] = str2[i];	//for concatination of two strings without strcat function
+
+      //printf("\nconcatinate of string is :%s\n",str1);
+    }
+  printf ("\nconcatinate of string is :%s\n", str1);	//printing the concatinated string
+
+}

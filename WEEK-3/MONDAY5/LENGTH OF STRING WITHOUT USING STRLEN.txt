@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    char str[200];
+    int i,count=0;
+    printf("Enter the string:\n");
+    scanf("%[^\n]s", str);    //reading the string using scanf statement
+   /* i=strlen(str);
+    printf("LENTH OF STRING IS :%d",i);*/
+    for(i=0;str[i]!=NULL;i++)    //with the help of forloop checking how many char are present
+    {
+    
+        count++;
+    
+    }
+    printf("%d",count);    //printing the length of the string
+}
