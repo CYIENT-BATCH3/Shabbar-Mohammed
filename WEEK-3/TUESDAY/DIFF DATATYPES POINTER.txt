@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+    //declaring the variables
+    int a;
+    float b;
+    char c;
+    //declaring the pointer variables
+    int *p;
+    float *q;
+    char *r;
+    printf("ENTER THE VALUES OF A,B,C\n");
+    //reading the values of a,b,c from keyboard
+    scanf("%d",&a);
+    scanf("%f",&b);
+    scanf(" %c",&c);
+    printf("THE VALUE OF A IS:%d\n",a);
+    printf("THE VALUE OF B IS:%f\n",b);
+    printf("THE VALUE OF C IS:%c\n",c);
+    //p is pointed to the address of a
+    p=&a;
+     printf("THE ADDRESS OF A IS:%u\n",p);
+      //q is pointed to the address of b
+    q=&b;
+    printf("THE ADDRESS OF B IS:%u\n",q);
+    //r is pointed to the address of c
+    r=&c;
+    printf("THE ADDRESS OF C IS:%u\n",r);
+    //printing the address of pointer p with %p
+    printf("THE ADDRESS OF POINTER P IS:%p",p);
+    
+}

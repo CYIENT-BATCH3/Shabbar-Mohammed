@@ -1,0 +1,18 @@
+#include <stdio.h>
+void swap(int x, int y);    //function declaration
+int main()
+{
+    int a,b;   //declaring the integer varaibles a,b
+    printf("ENTER THE VALUES OF A,B\n");
+    scanf("%d%d",&a,&b);  // giving the values to a,b from keyboard
+    swap(a,b);    //function call(a,b values are passing to x and y)
+}
+void swap(int x,int y)   //function definition
+{
+    //swaping condition
+    int temp;
+    temp=x;
+    x=y;
+    y=temp;
+    printf("THE VALUES AFTER SWAP ARE:\n%d\n%d\n",x,y);   //printing the values of x,y
+}

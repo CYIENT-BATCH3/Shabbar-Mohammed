@@ -1,0 +1,14 @@
+#include <stdio.h>
+void result(int *a, int *b, int *c, int *d);    //function declaration
+int main()
+{
+    int i,j,r,q;
+    printf("ENTER THE VALUES OF I,J,R,Q\n");
+    scanf("%d%d%d%d",&i,&j,&r,&q);    //reading the values from the keyboard
+
+result(&i,&j,&r,&q);   //function calling
+}
+void result(int *a, int *b, int *c, int *d)    //function definition
+{
+    printf("%d %d %d %d",*a,*b,*c,*d);   //printing the values 
+}

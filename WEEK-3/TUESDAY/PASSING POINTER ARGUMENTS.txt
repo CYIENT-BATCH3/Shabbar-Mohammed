@@ -1,0 +1,29 @@
+#include <stdio.h>
+float average(int *a, int n);    //function declaration
+int main()
+{ 
+//declaring the variables
+    int a[50];
+    int i,sum=0,n;
+    float avg=0,res;
+    printf("ENTER THE VALUE SS n\n");
+    scanf("%d",&n);
+    printf("ENTER THE ARRAY ELEMENTS\n");
+    for(i=0;i<n;i++)
+    {
+     scanf("%d",&a[i]);     //reading the array elements with the help of for loop
+    }
+    res=average(a,n);      //function call
+}
+float average(int *a, int n)  //function  definition
+{
+  int i,sum=0;
+  float res;
+  for(i=0;i<n;i++)
+    {
+     sum +=a[i];   //to get the sum of the array element
+    }
+    printf("SUM OF ARRAY ELEMENTS IS:%d\n",sum);
+    res=sum/n;   //condition to print the average of elements
+    printf("AVERAGE=%f\n",res);
+}

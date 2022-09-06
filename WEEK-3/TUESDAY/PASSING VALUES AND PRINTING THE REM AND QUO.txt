@@ -1,0 +1,20 @@
+#include <stdio.h>
+void result(int a, int b, int *x, int *z);    //function declaration
+int main()
+{ 
+     //declaring the variables i and j
+    int i,j;
+    int *q,*r;   //declaring the pointer variables
+    printf("ENTER THE VALUES OF I,J\n");
+    scanf("%d%d",&i,&j);    //reading the values of i and j with the help of scanf statement
+   r=&i;
+   q=&j;
+ result(i,j,r,q);   //function call
+ printf("REMAINDER:%d\nQUOTIENT:%d",*r,*q);
+}
+void result(int a, int b, int *x, int *z)   //FUNCTION definition
+{
+    *x=a%b;
+    *z=a/b;
+    
+}

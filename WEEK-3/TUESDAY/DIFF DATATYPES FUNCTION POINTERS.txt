@@ -1,0 +1,22 @@
+#include <stdio.h>
+void result(int *a, float *b, char *c);   //function declaration
+int main()
+{
+//declaring the variables
+    int i;
+    float j;
+    char r;
+    printf("ENTER THE VALUES OF I,J,R,Q\n");
+    scanf("%d",&i);   //reading the values from the keyboard
+    scanf("%f",&j);
+    scanf(" %c",&r);
+
+result(&i,&j,&r);  //funtion call
+}
+void result(int *a, float *b, char *c)   //function definition
+{
+//printing the values
+    printf("%d\n",*a);
+    printf("%f\n",*b);
+    printf("%c\n",*c);
+}

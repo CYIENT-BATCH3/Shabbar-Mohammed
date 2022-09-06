@@ -1,0 +1,14 @@
+#include <stdio.h>
+int *get();     //function declaration
+int a=10;      //global declaration 
+void main()
+{
+    int *p;
+    p=get();
+    printf("%u\n",p);     //printing the address 
+    printf("%d\n",*p);    //printing the value
+}
+int *get()       //function definition
+{
+    return(&a);     //returning the address of a
+}
