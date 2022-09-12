@@ -1,0 +1,107 @@
+#include<stdio.h>
+int call();
+int selectlangugage();
+int selectreleventissue();
+int talkingtocustomer();
+int main()
+{
+    int key,i;
+    printf("ENTER THE KEY\n");
+    scanf("%d",&key);
+    for(i=0;i<8;i++)
+    {
+    switch(key)
+    {
+    case 1:
+    call();
+   
+    case 2:
+    selectlangugage();
+    case 3:
+    selectreleventissue();
+    
+    case 4:
+    talkingtocustomer();
+    break;
+    default:
+    printf("ENTER THE THE VALID KEY\n");
+    break;
+}
+}
+}
+int call()
+{
+    printf("calling\n");
+}
+int selectlangugage()
+{
+    int num;
+    printf("SELECT LANGUAGE:\n");
+    scanf("%d",&num);
+    if(num==1)
+    {
+        printf("ENGLISH\n");
+    }
+    else if(num==2)
+    {
+        printf("HINDI\n");
+    }
+    else if(num==3)
+    {
+          printf("TELUGU\n");
+    }
+    else if(num==4)
+    {
+          printf("TAMIL\n");
+    }
+    else
+    {
+        printf("ENTER A VALID KEY\n");
+    }
+}
+ int selectreleventissue()
+ {
+     int num1;
+     printf("SELECT THE RELEVENT ISSUE:\n");
+     scanf("%d",&num1);
+     if(num1==1)
+     {
+         printf("ISSUE REGARDING NETWORK\n");
+         
+     }
+     else if(num1==2)
+     {
+         printf("ISSUE REGARDING RECHARGE\n");
+         
+     }
+     else if(num1==3)
+     {
+         printf("ISSUE REGARDING TALKTIME\n");
+       
+     }
+     else if(num1==4)
+     {
+         printf("ISSUE REGARDING PAYMENT\n");
+        
+     }
+     else
+     {
+         printf("ENTER A VALID KEY\n");
+        
+     }
+ }
+ int talkingtocustomer()
+ {
+    int num3;
+    printf("PRESS  1 TO TALK WITH CUSTOMER CARE\n");
+    scanf("%d",&num3);
+    if(num3==1)
+    {
+        printf("TALKING TO CUSTOMER\n");
+     break;
+    }
+    else{
+        printf("INVALID NUMBER CLICKED\n");
+    }
+     
+ }

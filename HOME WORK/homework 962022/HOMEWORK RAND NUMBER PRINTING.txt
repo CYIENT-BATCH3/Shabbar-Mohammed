@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{ 
+   int i,n,num;
+    printf("ENTER THE VALUE IS n\n");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        if(num>=1000 && num<=9999){
+     num = rand() % 10000 + 1; 
+     printf ("%d\t",num);  
+    }
+    }
+}
