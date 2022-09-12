@@ -1,0 +1,21 @@
+#include<stdio.h>
+void output(int *id,char *name,float *percentage);   //function declaration
+int main()   //main function
+{
+	setbuf(stdout,NULL);
+	//declaration and initialization
+	int a=2021;
+	char b[20]="shabbar";
+	float c=85.56;
+	output(&a,&b,&c);   //function call with values
+	return 0;
+}
+void output(int *id,char *name,float *percentage)    //function definition
+{
+	//printing the values
+	printf("INFORMATION OF EMPLOYEE\n");
+	printf("EMPLOYEE ID IS :%d\n",*id);
+	printf("EMPLOYEE PERCENT IS :%f\n",*percentage);
+	printf("EMPLOYEE NAME IS :%s\n",name);
+
+}

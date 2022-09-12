@@ -1,0 +1,35 @@
+/*
+ * struct funcn.c
+ *
+ *  Created on: Sep 12, 2022
+ *      Author: sm61828
+ */
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+	//declaring struct members
+	int age;
+	char name[50];
+};
+void details(struct student record);   //function declaration
+int main()
+{
+	setbuf(stdout,NULL);
+	struct student record;  //declaring structure variable
+	/*printf("ENTER THE NAME OF STUDENT\n");
+	scanf(" %s",&record.name);    //reading the  values of name with the help of .
+	printf("ENTER THE AGE OF THE STUDENT\n");
+	scanf("%d",&record.age);      //reading the  values of age with the help of .*/
+	record.age=23;
+	strcpy(record.name,"shabbar");//alternative method to assign static using stringcopy funcn
+	details(record);     //function call
+	return 0;
+}
+void details(struct student record)    //function definition
+{
+	//printing the values
+	printf("INFORMATION OF STUDENT\n");
+	printf("NAME OF STUDENT IS :%s\n",record.name);
+	printf("AGE OF THE STUDENT IS :%d\n",record.age);
+}

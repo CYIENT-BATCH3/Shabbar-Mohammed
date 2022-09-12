@@ -1,0 +1,21 @@
+#include <xc.h>
+#include<stdio.h>
+#define _XTAL_FREQ 20000000
+#define led RB0
+int main()
+{
+    TRISBbits.RB0=1;//making rb0 as input for switch
+    TRISCbits.RC0=0;//making rc0 as output
+    PORTCbits.RC0=0;
+    RBPU=0;
+    
+    while(1)
+    {
+        if(PORTBbits.RB0==0)
+        {
+            PORTCbits.RC0=1;
+        }
+        else
+            PORTCbits.RC0=0;
+    }
+}

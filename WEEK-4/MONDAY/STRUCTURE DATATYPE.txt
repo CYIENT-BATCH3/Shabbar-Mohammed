@@ -1,0 +1,38 @@
+/*
+ * struct funcn.c
+ *
+ *  Created on: Sep 12, 2022
+ *      Author: sm61828
+ */
+/*
+ * struct funcn.c
+ *
+ *  Created on: Sep 12, 2022
+ *      Author: sm61828
+ */
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+	int a;
+	float b;
+	char c[50];
+};
+struct student details(struct student std);
+int main(void)
+{
+	setbuf(stdout,NULL);
+	struct student e,s;
+	e=details(s);
+	printf("NAME IS :%s\n",e.c);
+	printf("ROLL NUMBER IS:%d\n",e.a);
+	printf("MARKS OUT OF 25 IS:%f\n",e.b);
+	return 0;
+}
+struct student details(struct student std)
+		{
+	    std.a=15;
+		std.b=20.5;
+		strcpy(std.c,"shabbar");
+	    return(std);
+		}
