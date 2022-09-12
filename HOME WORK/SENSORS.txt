@@ -1,0 +1,278 @@
+/*ALGORITHM
+ * 1.Declaring 3 sensor variables right pressure and left pressure sensor and center pressure sensor
+ * 2.Now assign values to the pressure sensors minimum of 50
+ * 3.Now check the 3 pressure sensor values if they are less than 0x05 and greater than 0xf5 they are considered as noise and they can be ignored
+ * 4.The values under condition are considered as valid
+ * 5.If the sensor detects  consecutive 5 values greater than 0x55 then airbag has to deploy
+ * 6.If the pr_data detect valid value then from pc_data data is taken 5 values after we will not consider past values same condition for pl_data
+ * 7.All these considered values are stored in final data
+ * 8.From final data threshold values are checked if the 5 values greater than 0x55 then airbag should deploy otherwise consider as no accident has occured
+ */
+#include<stdio.h>
+//int fp_data(int num,int var);
+static int m=0;
+static int d=0;
+//int fp_data(int *f_p_data);
+//static int j;
+//static int var=-1;
+int fun_data(int *f_p_data);
+int main()
+{
+               int rev=0;//declaring variable
+               setbuf(stdout,NULL);
+               int pr_data[]={0x01,0x02,0x05,0x06,0x07,0x08,0x09,0x10,0x25,0x30,0x11,0x20,0x30,0x56,0x57,0x58,0x59,0x60,0x61,0x24,0x25,0x26,0x25,0x28,0x27,0x29,0x24,0x26,0x10,0x24,0x33,0x15,0x45,0x37,0x36,0x45,0x15,0x14,0x17,0xa1,0xa2,0xa3,0xa5,0xd3,0xf1,0xf2,0xf4,0xf5,0xf6,0xf7};
+               	int pl_data[]={0x02,0x03,0x05,0x04,0x06,0x08,0x01,0x15,0x42,0x15,0x36,0x12,0x15,0x56,0x57,0x58,0x59,0x60,0x61,0x25,0x11,0x22,0x33,0x44,0x66,0x55,0x20,0x30,0x25,0x40,0x50,0x55,0x60,0x47,0x10,0x21,0x36,0xa1,0xa5,0xa3,0xb1,0xb2,0xb5,0xb6,0xc2,0xc3,0xd5,0xf2,0xf5,0xf6};
+               	int pc_data[]={0x05,0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x25,0x28,0x27,0x29,0x24,0x56,0x57,0x58,0x59,0x60,0x61,0x08,0x01,0x15,0x42,0x15,0x36,0x12,0x15,0x56,0x42,0x61,0x25,0x36,0x19,0x25,0x11,0x22,0x33,0x44,0x66,0x55,0x20,0x47,0x10,0x21,0x36,0xf1,0xf2,0xf5,0xf6,0xf7};
+               	int f_p_data[500];
+               	int i=0,j=0,k=0;
+               	//printing right sensor values with the help of for loop
+               		printf("PR TIME STAMP\tPR DATA\n");
+               		for(i=0;i<50;i++)
+               		{
+               			printf("%d\t\t0x%x\n",i,pr_data[i]);
+               		}
+               		//printing left sensor values with the help of for loop
+               			printf("PL TIME STAMP\tPL DATA\n");
+               			for(j=0;j<50;j++)
+               			{
+               				printf("%d\t\t0x%x\n",j,pl_data[j]);
+               			}
+               			//printing center sensor values with the help of for loop
+               					printf("PC TIME STAMP\tPC DATA\n");
+               					for(k=0;k<50;k++)
+               					{
+               						printf("%d\t\t0x%x\n",k,pc_data[k]);
+               					}
+                int choice1=0x05,choice2=0xF5;//declaring variable
+                while(m<50)//loop for storing elements in f_p_data
+                {
+
+                               for(i=m;i<50;i=i+5)
+                               {
+                                                if((pr_data[i]>choice1)&&(pr_data[i]<choice2))//checking for noise
+                                            {
+
+                                                          f_p_data[d]=pr_data[i];//storing pr[i] in f_p_data
+
+                                                      break;//break from the loop
+                                           }
+                               }
+                              for(j=i+5;j<50;j=j+5)
+                               {
+                                                if((pc_data[j]>choice1)&&(pc_data[j]<choice2))//checking for noise
+                                                 {
+                                                           f_p_data[d]=pc_data[j];
+
+                                                       break;//break from the loop
+                                                  }
+                                }
+                              for(m=j+5;m<50;m=m+5)
+                               {
+                                               if((pl_data[m]>choice1)&&(pl_data[m]<choice2))//checking for noise
+                                                {
+
+                                                               f_p_data[d]=pl_data[m];//storing pl[m] in f_p_data
+
+                                                                 break;//break from the loop
+                                                }
+                                              }
+                              d++;//incrementning f_p_data index
+                }
+                printf("\nTime stamp      f_p_data \n");
+              for(int i=0;i<d;i++)
+             {
+               printf("%d\t\t 0x%x\n",i,f_p_data[i]);//printning the elements in f_p_data
+                    }
+rev=fun_data(&f_p_data);//calling function
+if(rev==1)//if the rev is 1 air bag  will work
+{
+               printf("\nAIR BAG HAS BEEN DEPLOYED");
+               }
+else
+               printf("\nNO ACCIDENT HAS OCCURED/EVERYONE ARE SAFE");
+}
+int fun_data(int *f_p_data)//defining function
+{
+               int prev=f_p_data[0],count=0;//declaring variables
+for(int i=0;i<d;i++)
+{
+               if(prev==f_p_data[i])//checking neighbouring elements are same or not
+               {
+                              count++;
+   prev=f_p_data[i];//changing prev variable
+               }
+else
+{
+count=0;//if the neighbouring elements are not same changing count to 0
+}
+
+               if(count==5)
+               {
+                              return 1;//return 1 if count==5
+               }
+
+}
+return 0;
+}
+/* OUTPUT:
+PR TIME STAMP	PR DATA
+0		0x1
+1		0x2
+2		0x5
+3		0x6
+4		0x7
+5		0x8
+6		0x9
+7		0x10
+8		0x25
+9		0x30
+10		0x11
+11		0x20
+12		0x30
+13		0x56
+14		0x57
+15		0x58
+16		0x59
+17		0x60
+18		0x61
+19		0x24
+20		0x25
+21		0x26
+22		0x25
+23		0x28
+24		0x27
+25		0x29
+26		0x24
+27		0x26
+28		0x10
+29		0x24
+30		0x33
+31		0x15
+32		0x45
+33		0x37
+34		0x36
+35		0x45
+36		0x15
+37		0x14
+38		0x17
+39		0xa1
+40		0xa2
+41		0xa3
+42		0xa5
+43		0xd3
+44		0xf1
+45		0xf2
+46		0xf4
+47		0xf5
+48		0xf6
+49		0xf7
+PL TIME STAMP	PL DATA
+0		0x2
+1		0x3
+2		0x5
+3		0x4
+4		0x6
+5		0x8
+6		0x1
+7		0x15
+8		0x42
+9		0x15
+10		0x36
+11		0x12
+12		0x15
+13		0x56
+14		0x57
+15		0x58
+16		0x59
+17		0x60
+18		0x61
+19		0x25
+20		0x11
+21		0x22
+22		0x33
+23		0x44
+24		0x66
+25		0x55
+26		0x20
+27		0x30
+28		0x25
+29		0x40
+30		0x50
+31		0x55
+32		0x60
+33		0x47
+34		0x10
+35		0x21
+36		0x36
+37		0xa1
+38		0xa5
+39		0xa3
+40		0xb1
+41		0xb2
+42		0xb5
+43		0xb6
+44		0xc2
+45		0xc3
+46		0xd5
+47		0xf2
+48		0xf5
+49		0xf6
+PC TIME STAMP	PC DATA
+0		0x5
+1		0x20
+2		0x21
+3		0x22
+4		0x23
+5		0x24
+6		0x25
+7		0x26
+8		0x25
+9		0x28
+10		0x27
+11		0x29
+12		0x24
+13		0x56
+14		0x57
+15		0x58
+16		0x59
+17		0x60
+18		0x61
+19		0x8
+20		0x1
+21		0x15
+22		0x42
+23		0x15
+24		0x36
+25		0x12
+26		0x15
+27		0x56
+28		0x42
+29		0x61
+30		0x25
+31		0x36
+32		0x19
+33		0x25
+34		0x11
+35		0x22
+36		0x33
+37		0x44
+38		0x66
+39		0x55
+40		0x20
+41		0x47
+42		0x10
+43		0x21
+44		0x36
+45		0xf1
+46		0xf2
+47		0xf5
+48		0xf6
+49		0xf7
+
+Time stamp      f_p_data
+0		 0x58
+1		 0x50
+2		 0xb1
+3		 0xf1
+
+NO ACCIDENT HAS OCCURED/EVERYONE ARE SAFE*/
