@@ -1,0 +1,53 @@
+#include<stdio.h>   //preprocessor directive used to include standard input output function
+struct operations    //structure declaration
+{
+	//declaring structure members
+	int x;
+	int y;
+};
+struct operations addition(struct operations add);  //function declaration of struct type with name addition
+struct operations subtraction(struct operations sub);  //function declaration of struct type with name subtraction
+struct operations multiplication(struct operations mul);  //function declaration of struct type with name multiplication
+struct operations division(struct operations div);    //function declaration of struct type with name division
+int main(void)
+{
+	setbuf(stdout,NULL);
+	struct operations opr,art;    //creating structure variables
+	opr=addition(art);   //calling addition function
+	printf("ADDITION :%d\n",opr.x+opr.y);  //printing the addition of two values initialized in addition function
+	opr=subtraction(art);  //calling addition function and assigning to struct variable
+	printf("SUBTRACTION :%d\n",opr.x-opr.y);   //printing the subtraction of two values initialized in addition function
+	opr=multiplication(art);    //calling addition function and assigning to struct variable
+	printf("MULTIPLICATION :%d\n",opr.x*opr.y);     //printing the multiplication of two values initialized in addition function
+	opr=division(art);       //calling addition function and assigning to struct variable
+	printf("DIVISION :%d\n",opr.x/opr.y);      //printing the division of two values initialized in addition function
+}
+struct operations addition(struct operations add)  // function definition
+{
+	//assigning values to the members of structure
+add.x=20;
+add.y=10;
+return(add);
+}
+struct operations subtraction(struct operations sub)    // function definition
+{
+	//assigning values to the members of structure
+sub.x=20;
+sub.y=10;
+return(sub);
+}
+struct operations multiplication(struct operations mul)   // function definition
+{
+	//assigning values to the members of structure
+mul.x=20;
+mul.y=10;
+return(mul);
+}
+struct operations division(struct operations div)    // function definition
+{
+	//assigning values to the members of structure
+div.x=20;
+div.y=10;
+return(div);
+}
+
