@@ -1,0 +1,83 @@
+create a project with 3 diff header files to create 3 arithematic operations
+FOR PROPER output in eclipse enter the funcn as setbuff(stdout,NULL);
+conditional compilation
+1 #if
+2 #elseif
+3 #elif
+4 #ifndef
+5 #undef
+6 #ifdef
+wap to store the valuen from 0-7 by using the width of 3 bits?
+#include<stdio.h>
+struct student
+{
+	unsigned int s:3;
+}s1;
+int main()
+{
+	s1.s=4;
+	printf("size is %d\n",sizeof(s1));
+	printf("value is %d\n",s1.s);
+	s1.s=7;
+	printf("size is %d\n",sizeof(s1));
+	printf("value is %d\n",s1.s);
+    s1.s=8;
+    printf("size is %d\n",sizeof(s1));
+    printf("value is %d\n",s1.s);
+}
+structure padding and packing:
+bit-1,0
+nibble-4bits
+byte-8bits
+word-4bytes.
+#include<stdio.h>
+//#pragma pack(1)
+struct student
+{
+	char ch;
+ int a;
+
+ char ch1;
+}s1;
+struct stud
+{
+	char s;
+	int b;
+	float c;
+}s2;
+int main()
+{
+	struct student s1;
+	printf("size is %d\n",sizeof(s1));  //printing the size of int
+	struct stud s2;
+	printf("size is %d\n",sizeof(s2));   //printing the size
+
+
+}
+before using #pragma output is
+size is 12
+size is 12
+after using #pragma pack(1)
+size is 6
+size is 9
+==>WAP to illustrate the use of datatype structure
+#include<stdio.h>
+struct student
+{
+    int age;
+    char name[10];
+};
+typedef struct student std;
+int main()
+{
+	setbuf(stdout,NULL);
+	std s1;
+	printf("ENTER THE AGE\n");  // asking to enter the age
+	scanf("%d",&s1.age);   //reading the values
+	printf("ENTER THE NAME\n");
+	scanf(" %s",&s1.name);
+	printf("NAME IS :%s\n",s1.name);
+	printf("AGE IS :%d\n",s1.age);
+
+
+}
