@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	FILE *fp;    //declaring file pointer
+	char str[100]="error is";
+	fp=fopen("abc.txt","r");    //opening file in read mode
+	if(fp==NULL)  
+	{
+		printf("FILE NOT FOUND\n");
+	}
+	else
+	{
+		fprintf(fp,"%s","welldone");    //writing to file in read mode
+
+	if(ferror(fp))
+		perror(str);
+	printf("error is");
+}
+	fclose(fp);   //closing file
+	return 0;
+}

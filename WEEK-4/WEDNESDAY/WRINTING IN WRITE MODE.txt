@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+	FILE *fp;    //declaring file pointer
+	fp=fopen("abc.txt","w");    //opening file in read mode
+   fprintf(fp,"%s","time");
+	if(ferror(fp))
+	{
+		perror("error:writing in a read only file\n");
+		clearerr(fp);
+	}
+	fclose(fp);   //closing file
+	return 0;
+}
