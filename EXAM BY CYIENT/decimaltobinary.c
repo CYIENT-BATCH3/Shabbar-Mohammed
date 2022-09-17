@@ -12,6 +12,7 @@ int main()    //main function as int return type
 int decimalToBinary(int decimalnum)   //function to perform decimal to binary conversion
 {
     int binarynum = 0;   //declaring binarynum variable
+	printf("%d",binarynum);
     int rem, temp = 1;   //declaring remainder and temperory variable
 
     while (decimalnum!=0)   //while loop to perform until it condition fails
