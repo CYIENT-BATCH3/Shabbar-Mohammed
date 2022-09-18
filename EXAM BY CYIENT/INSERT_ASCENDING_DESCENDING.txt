@@ -1,0 +1,99 @@
+/* algorithm
+1.create an array and insert elements(size and elements from user)
+2.Now print the array with the help of for loop
+3.perform ascending order and print elements
+4.perform descending order and print elements
+*/
+#include<stdio.h>    //preprocessor directive to include standard input and output
+int ascending(int asc[20]);   //function declaration to perform ascending order
+int descending(int des[20]);  //function declaration to perform descending order
+int i,j,size;  //declaring as global variables because ascending and descending function can access these variables
+int main()    //main function of integer return type
+{  //start
+	setbuf(stdout,NULL);   //command for for eclipse to get proper output
+
+int array[20]; //initializing array
+printf("ENTER THE SIZE OF THE ARRAY\n");  //asking to enter array size
+scanf("%d",&size);   //to take size of array from keyboard
+printf("ENTER ARRAY ELEMENTS\n");   //asking to enter array elements
+for(i=0;i<size;i++)   //for loop to scanf/to get array elements from the keyboard
+{
+	scanf("%d",&array[i]);    //with the help of scanf statement entering the array elements
+}
+printf("ARRAY IS :");
+for(i=0;i<size;i++)   //printing the array elements
+{
+	printf("%d",array[i]);
+	if(i<size-1)    //to get comma after every element
+			{
+				printf(",");
+			}
+}
+printf("\n");
+ascending(array);    //function call
+descending(array);   //function call
+}
+int ascending(int asc[20])   //ascending function definition
+{
+	int temp;
+	for (i = 0; i < size; i++)  //forloop to check first element
+		{
+
+	                          for (j = i + 1; j < size; j++)   //for loop to check another element
+	                          {
+
+	                              if (asc[i] > asc[j])  //comparison
+	                              {
+
+	                                  temp =  asc[i];
+	                                  asc[i] = asc[j];
+	                                  asc[j] = temp;
+
+	                              }
+
+	                          }
+	                      }
+
+	printf("ARRAY AFTER ASCENDING ORDER IS:");
+	for(i=0;i<size;++i)
+	{
+		printf("%d",asc[i]);   //printing array elements
+		if(i<size-1)   //to get comma after every element
+				{
+					printf(",");
+				}
+	}
+	return 0;
+}
+int descending(int des[20])    //descending order function definition
+{
+	int temp;
+	for (i = 0; i < size; i++)
+	                      {
+
+	                          for (j = i + 1; j < size; j++)
+	                          {
+
+	                              if (des[i] < des[j])   //to compare elements
+	                              {
+
+	                                  temp =  des[i];
+	                                  des[i] = des[j];
+	                                  des[j] = temp;
+
+	                              }
+
+	                          }
+	                      }
+    printf("\n");
+	printf("ARRAY AFTER DESCENDING ORDER IS:");
+	for(i=0;i<size;++i)
+	{
+		printf("%d",des[i]);   // printing array of descending order
+		if(i<size-1)   //to get comma after every element
+		{
+			printf(",");
+		}
+	}
+	return 0;
+}

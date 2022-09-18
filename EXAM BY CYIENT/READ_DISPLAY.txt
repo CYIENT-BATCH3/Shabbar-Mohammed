@@ -1,0 +1,28 @@
+/*ALGORITHM
+ * 1.create a file and write some content in it
+ * 2.Now check file found or not
+ * 3.with the help of fscanf command read the content of file
+ * 4.with the help of puts print the the content
+ * 5.close the file
+ */
+#include <stdio.h>  //preprocessor to include standard input output
+int main()    // main function
+{
+    //file pointer
+    FILE *fp = NULL;
+    char readFileData[10];
+    //open file
+    fp = fopen("SHABBAR.txt", "r");
+    if(fp == NULL)
+    {
+        printf("FILE NOT FOUND\n");
+    }
+    //read file data
+    fscanf(fp,"%s",readFileData);
+    //Display read data
+    puts(readFileData);
+    //close the file
+    fclose(fp);
+    printf("Read file successfully\n");
+    return 0;
+}

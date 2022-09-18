@@ -1,0 +1,15 @@
+/*ALGORITHM
+ * 1.define macro with the help of #define function
+ * 2.In main function declare variable to find square
+ */
+#include <stdio.h>    //preprocessor directive to include standard input output
+#define square(sq_number) (sq_number*sq_number)//defining macro
+int main()    //main function
+{
+	setbuf(stdout,NULL);
+    int sq_number;//declaring variable
+    printf("ENTER THE NUMBER\n");  //asking to enter a number
+    scanf("%d",&sq_number);//reading number
+    printf("THE SQUARE OF  %d IS %d",sq_number,square(sq_number));//printing the square of number
+    return 0;
+}

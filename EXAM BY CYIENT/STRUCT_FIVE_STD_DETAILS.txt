@@ -1,0 +1,49 @@
+/*ALGORITHM
+ * 1.creating structure
+ * 2.declare structure members
+ * 3.declare read and write functions
+ * 4.declare structure variable as array as we are taking details of 5 student
+ * 5.now with the help of for loop read 5 student details
+ * 6.in print function with the help of for loop print student details
+ */
+#include<stdio.h>
+
+struct studentdata//declaring structure
+{
+char stu_name[30];//declaring structure member
+int stu_id,stu_age;//declaring structure member
+};
+void print_details(struct studentdata *s);//function declaration
+void read_data(struct studentdata *s);//function prototype declaring
+int main()
+{
+  setbuf(stdout,NULL);
+  struct studentdata s[5];//declaring structure variable array of 5 structures
+
+read_data(s);//calling read_data function
+print_details(s);//calling print_detailsfunction
+}
+void read_data(struct studentdata *s)//function definition
+{
+	for(int i=0;i<5;i++)
+	{
+     printf("ENTER THE STUDENT %d NAME\n",i+1);
+     scanf("%s",s[i].stu_name);//reading name
+     printf("ENTER THE STUDENT %d AGE\n",i+1);
+     scanf("%d",&s[i].stu_age);//reading age
+     printf("ENTER THE STUDENT %d ID\n",i+1);
+     scanf("%d",&s[i].stu_id);//reading id
+	}
+}
+void print_details(struct studentdata *s)//defining function
+	{
+		for(int i=0;i<5;i++)
+		{
+	     printf("\nSTUDENT %d NAME IS:%s",i+1,s[i].stu_name);//printing name
+
+	     printf("\nSTUDENT %d AGE IS:%d",i+1,s[i].stu_age);//printing age
+
+	     printf("\nSTUDENT %d ID IS:%d\n",i+1,s[i].stu_id);//printing id
+
+		}
+}

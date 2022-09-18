@@ -1,0 +1,58 @@
+/* ALGORITHM
+ * 1.declare the array
+ * 2.enter the size of an array
+ * 3.now enter the array elements
+ * 4.calling the search function
+ * 5.enter the number to search
+ * 6.if number equals to array elements then element is found
+ * 7.otherwise element not found
+ */
+#include<stdio.h>   //preprocessor directive to include standard input and output
+int i,count;
+int search(int ,int *,int);
+int main()     //main function of integer return type
+{
+	setbuf(stdout,NULL);
+   int size,numtosrc;     // declaring the variables
+   printf("ENTER THE SIZE OF ARRAY:");
+   scanf("%d",&size);    //enter the size of array
+   int array[size];
+   printf("ENTER THE ELEMENTS:\n");
+   for(i=0;i<size;i++)
+   {
+      scanf("%d",&array[i]);   //reading the array elements from the keyboard
+   }
+   printf("ARRAY IS:");
+   for(i=0;i<size;i++)
+   {
+	   printf("%d",array[i]);   // printing array elements
+	   if(i<size-1)
+		   printf(",");
+   }
+   printf("\n");
+   printf("ENTER THE ELEMENT TO BE SEARCHED:");   //enter the element to search in array
+   scanf("%d",&numtosrc);   //reading the element from the keyboard
+   search(size,array,numtosrc);  //function call
+   return 0;
+}
+int search(int size,int *a,int numtosrc)   // function definition
+{
+	int pos;   //declaring variable to get position
+   for(i=0;i<size;i++)    //for loop to search in array from start to end
+   {
+      if(numtosrc==a[i])  //condition to check 
+      {
+         count=1;  //if number equals count becomes 1
+         pos=i+1;   // pos is i+1 because array index starts from 0
+         break;   // if it founds then break
+      }
+   }
+   if(count==1)   
+   {
+      printf("%d FOUND AT %d POSITION",numtosrc,pos);   //printing element found at 0 position
+   } else 
+   {
+	   printf("%d NOT FOUND",numtosrc);    //if element not found it prints element not found
+   }
+   return 0;
+}
