@@ -1,0 +1,25 @@
+/*
+ * first_prgm.cpp
+ *
+ *  Created on: Sep 19, 2022
+ *      Author: sm61828
+ */
+//WRITE A C++ PROGRAM TO PRINT ENTERED NUMBER IS VOWEL OR CONSONENT
+#include<iostream>
+using namespace std;    //scope resolution
+int main()
+{
+	char character;   //declaring the char
+	cout<<"ENTER THE CHARACTER TO CHECK IT IS VOWEL OR CONSONENT\n";
+	cin>>character;   //readint the character from the keyboard
+//checking the condition
+	if(character=='a' ||character=='e'||character=='i'||character=='o'||character=='u'||character=='A'||character=='E'||character=='I'||character=='O'||character=='U' )
+	{
+		cout<<"ENTERED CHARACTER IS VOWEL\n";
+	}
+	else
+	{
+		cout<<"ENTERED CHARACTER IS CONSONENT\n";
+	}
+}
+

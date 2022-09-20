@@ -1,0 +1,27 @@
+/*
+ * first_prgm.cpp
+ *
+ *  Created on: Sep 19, 2022
+ *      Author: sm61828
+ */
+//WRITE A C++ PROGRAM TO FIND n NATURAL NUMBER
+#include<iostream>
+using namespace std;    //scope resolution
+int main()
+{
+//variables declaration
+	int a,i=0;
+	cout<<"ENTER THE NUMBER\n";
+	cin>>a;    //reading from the keyboard
+	do
+	{
+		cout<<i;    //printing values
+		cout<<"\n";
+		i++;
+	}
+		while(i<=a);
+		{
+			cout<<"\n";
+		}
+	}
+

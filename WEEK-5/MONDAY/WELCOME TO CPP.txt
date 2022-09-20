@@ -1,0 +1,15 @@
+/*
+ * first_prgm.cpp
+ *
+ *  Created on: Sep 19, 2022
+ *      Author: sm61828
+ */
+//WAP TO PRINT WELCOME TO C++
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout<<"WELCOME TO C++";    //printing with cout
+	return 0;
+}
+
