@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	setbuf(stdout,NULL);
+	int bin_num,i;
+	printf("ENTER THE NUMBER\n");
+	scanf("%d",&bin_num);
+	for(i=8;i>=0;i--)
+	{
+		if(bin_num&(1<<i))
+		{
+			printf("1");
+		}
+		else
+		{
+			printf("0");
+		}
+	}
+}

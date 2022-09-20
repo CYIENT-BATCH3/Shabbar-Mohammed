@@ -1,0 +1,106 @@
+#include<stdio.h>
+//function declarations
+int set_bit(int number_set);  
+int clear_bit(int num_clear);
+int toggle_bit(int num_tog);
+int i;     //global declaration of variable
+int main()
+{
+	setbuf(stdout,NULL);
+	int bin_num;    //varible declaration
+	printf("ENTER THE NUMBER WHICH YOU WANT TO CONVERT TO BINARY\n");
+	scanf("%d",&bin_num);     //reading binary number from the keyboard
+	printf("BINARY NUMBER OF GIVEN NUMBER IS:");
+	for(i=7;i>=0;i--)
+	{
+		if(bin_num&(1<<i))
+		{
+			printf("1");
+		}
+		else
+		{
+			printf("0");
+		}
+	}
+	set_bit(bin_num);   //function call
+    clear_bit(bin_num);    //function call
+    toggle_bit(bin_num);
+    test_bit(bin_num);
+}
+int set_bit(int num_set)       //function definition
+{
+   int setbit;
+   printf("\n*******************set bit********************\n");
+   printf("\nENTER THE BIT YOU WANT TO SET\n");
+   scanf("%d",&setbit);                       //reading values from the keyboard
+   printf("BINARY NUMBER AFTER SETTING BIT IS:");
+   num_set |=(1<<setbit);
+   for(i=7;i>=0;i--)
+   {
+	  if(num_set&(1<<i))
+	  {
+		  printf("1");
+	  }
+	  else
+	  {
+		  printf("0");
+	  }
+  }
+	return 0;
+}
+int clear_bit(int num_clear)       //function definition
+{
+	printf("\n*******************clear bit********************\n");
+	int clear_bit;
+	printf("\nENTER THE BIT YOU WANT TO CLEAR\n");
+	scanf("%d",&clear_bit);
+	num_clear &= ~(1<<clear_bit);
+	for(i=7;i>=0;i--)
+	{
+		if(num_clear&(1<<i))
+		{
+			printf("1");
+		}
+		else
+		{
+			printf("0");
+		}
+	}
+	return 0;
+}
+int toggle_bit(int num_tog)     //function definition
+{
+	int tog_bit;
+	int bit_toggle_num;
+	bit_toggle_num=num_tog;
+	printf("\n*******************toggle bit********************\n");
+	printf("\nBINARY NUMBER AFTER TOGGLING ALL BITS:");
+	num_tog =~(num_tog);
+	for(i=7;i>=0;i--)
+		{
+			if(num_tog&(1<<i))
+			{
+				printf("1");
+			}
+			else
+			{
+				printf("0");
+			}
+		}
+	printf("\nENTER THE BIT YOU WANT TO TOGGLE:\n");     //asking from the keyboard
+	scanf("%d",&tog_bit);                      //reading bit to toggle
+	bit_toggle_num ^=(1<<tog_bit);
+	for(i=7;i>=0;i--)
+			{
+				if(bit_toggle_num&(1<<i))
+				{
+					printf("1");
+				}
+				else
+				{
+					printf("0");
+				}
+			}
+	return 0;
+}
+
