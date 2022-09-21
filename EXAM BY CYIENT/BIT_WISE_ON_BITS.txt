@@ -1,3 +1,9 @@
+/*algorithm
+1.declare variable to perform particular operation
+2.enter the bit you want to manupulate
+3.now with the help of bitwise operations  we can manupulate bits with the help of or we can set the bit and with and we can clear the bit,with ! and ~ we can toggle bits
+4.now convert the result to binary numbers and print.
+5.end*/
 #include<stdio.h>
 //function declarations
 int set_bit(int number_set);  
