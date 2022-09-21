@@ -1,3 +1,6 @@
+/*enter the number you want to convert it into binary
+2.now with the help of shift and or operator print the particular bit the help of for loop
+3.end*/
 #include<stdio.h>
 int main()
 {
