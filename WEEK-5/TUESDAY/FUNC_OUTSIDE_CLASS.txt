@@ -1,0 +1,36 @@
+/*
+ * FUNCTION_OUTSIDE.cpp
+ *
+ *  Created on: Sep 20, 2022
+ *      Author: sm61828
+ */
+#include<iostream>    //preprocessor directive to include iostream
+using namespace std;    //scope resolution operator
+class employee      //declaring the class and giving class name
+{
+public:     //public access specifier
+	//declaring variables
+	char name[50];
+	float salary;
+	void read();     //function declaration
+	void display();   //function declaration
+};
+void employee::read()    //function definition
+{
+	cout<<"ENTER THE NAME OF THE EMPLOYEE:";
+	cin>>name;   //reading the name from the keyboard
+	cout<<"ENTER THE SALARY:";
+	cin>>salary;        //reading thesalary from the keyboard
+}
+void employee::display()       //function definition
+{
+	cout<<"NAME IS:"<<name;     //printing name
+	cout<<"SALARY IS:"<<salary;    //printing salary
+}
+int main()    //main function
+{
+	employee e;    //declaring class variable
+	e.read();      //function call
+	e.display();     //function call
+	return 0;
+}

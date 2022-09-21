@@ -1,0 +1,24 @@
+/*
+ * myclass.cpp
+ *
+ *  Created on: Sep 20, 2022
+ *      Author: sm61828
+ */
+#include<iostream>
+using namespace std;   //scope
+class myclass   //declaring the class AND CLASS NAME
+{
+public:     //public   access specifier
+	int x;    //variable declared as public
+private:    //private access specifier
+	int y;     //variable declared as private
+};
+int main()    //main function
+{
+	myclass obj;    //creating class object
+	obj.x=50;    //accessing the class member with . operator
+	cout<<obj.x;     // printing the class member
+	//obj.y=20;   NOT ALLOWED AS THEY ARE DECLARED AS PRIVATE
+	//cout<<obj.y;
+	return 0;
+}

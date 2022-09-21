@@ -1,0 +1,37 @@
+/*
+ * class_fun.cpp
+ *
+ *  Created on: Sep 20, 2022
+ *      Author: sm61828
+ */
+#include<iostream>
+using namespace std;    //scope   resolution operator
+class function    //class declaration and class name
+{
+	//declaring variables
+	int age;
+	float fees;
+public:      //public access specifier
+	int output()     //function definition
+	{
+		cout<<"ENTER THE AGE\n";
+		cin>>age;
+		cout<<"ENTER THE FEES\n";
+		cin>>fees;
+		return 0;
+	}
+	int display()       //function definition
+			{
+		cout<<"AGE IS:"<<age;
+		cout<<"FEES IS:"<<fees;
+		cout<<"\n";
+		return 0;
+	}
+};
+int main()   //main function
+{
+	function s1;
+	s1.output();    //function call
+	s1.display();   //function call
+	return 0;
+}
