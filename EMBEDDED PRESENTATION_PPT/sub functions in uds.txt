@@ -1,0 +1,23 @@
+Sub-function
+
+Description
+
+Hard Reset (0x01)
+
+Hard reset means removing the battery (power supply) from the ECU and connecting the ECU again with the battery.
+In this type of reset, ECU re-initializes the core hardware components of the system and also It will re-initializes the Non-volatile and volatile memory.
+This reset may lose some data because the battery is removed suddenly while running time of the ECU.
+
+
+
+Key off On Reset (0x02))
+
+The Key Off-On Reset is simply the ignition Off-On process of a vehicle. It is the normal sleep-wake-up mode of a Microcontroller.
+When we are doing Key Off On reset ECUs will not get the power down immediately. It will go to the boot mode then it will store all the data in Non-Volatile memory and de-initialize the hardware variables without losing any data.
+In this method of resetting, there is no chance of losing data. This is the proper way to reset, and most of the OEMs are using this type of ECU Reset.
+
+
+Soft Reset (0x03)
+
+A soft reset is nothing but restarting the application’s main software. When we do this type of reset, the stack pointer of the microcontroller points to the main() function’s address. Then it will start to execute from first.
+For Example, will take a watchdog reset. Whenever hanging or any malfunctions are happening, this watchdog timer will reset the microcontroller and it will start from the main() function.
