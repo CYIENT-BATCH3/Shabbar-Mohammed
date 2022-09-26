@@ -86,14 +86,14 @@ int main()
        if(data_buf[6] == 0xAA  && data_buf[7] == 0XAA  && data_buf[8] == 0XAA  && data_buf[9] == 0XAA && data_buf[10] == 0XAA)
        {
            PORTDbits.RD0 = 1;
-           __delay_ms(2000);
-           CAN_TX();
+           __delay_ms(2000);    //delay 
+           CAN_TX();   //function call
        }
        else
        {
            PORTDbits.RD0 = 0;
            __delay_ms(2000);
-           CAN_TX1();
+           CAN_TX1();   //function call
        }
     }
 }
@@ -114,7 +114,7 @@ void can_rx_init()
 }
 void set_mode()
 {
-    set_baudrate();
+    set_baudrate();    //function call
 }
 void get_mode()
 {
