@@ -1,0 +1,36 @@
+//COPY CONSTRUCTOR 
+#include<iostream>   //preprocessor directive to include iostream
+using namespace std;    //scope resolution operator
+class person   //creating class
+{
+public:    //access specifier
+	//declaring variables
+	string name;
+	int age;
+	person(string person_name,int person_age)    //parameterized constructor
+	{
+		//constructor is used to initialize values to class members
+		cout<<"CONSTRUCTOR FOR BOTH AGE AND NAME IS CALLED"<<endl;
+		name=person_name; 
+		age=person_age;
+	}
+	person(const person& obj)    //copy constructor(coping one constructor values to the other constructor
+	{
+		cout<<"COPY CONSTRUCTOR IS CALLED"<<endl;
+		name=obj.name;          //in copy constructor values are assigned using object and . operator
+		age=obj.age;
+	}
+	void print()    //function definition
+	{
+		cout<<"NAME IS:"<<name<<endl;    //printing name
+		cout<<"AGE IS:"<<age<<endl;      //printing age
+	}
+};    //end of class
+int main()      //main function
+{
+	person obj1("SHABBAR MOHAMMED",23);     //passing values to the constructor arguments
+	obj1.print();      //function call
+	person obj2(obj1);     //copying first constructor values to the constructor
+	obj2.print();          //function call
+	return 0;
+}       //end main function

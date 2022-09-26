@@ -1,0 +1,30 @@
+/*
+ * INHER.cpp
+ *
+ *  Created on: Sep 23, 2022
+ *      Author: sm61828
+ */
+#include<iostream>
+using namespace std;
+class a
+{
+public:
+
+void show()
+{
+	cout<<"hi"<<endl;
+}
+};
+class b:public a
+{
+public:
+	void show()
+	{
+		cout<<"hello"<<endl;
+	}
+};
+int main()
+{
+	b b1;
+	b1.show();
+}

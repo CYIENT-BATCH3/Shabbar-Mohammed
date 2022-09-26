@@ -1,0 +1,33 @@
+/*
+ * func_overload.cpp
+ *
+ *  Created on: Sep 23, 2022
+ *      Author: sm61828
+ */
+//WRITE A C PROGRAM TO PRINT AREA OF CIRCLE,TRIANGLE,RECTANGLE USING FUNCTION OVERLOADING
+#include<iostream>
+using namespace std;
+class func
+{
+public:
+    double area(float r)
+	{
+		return(3.14*r*r);
+
+	}
+	int area(int l,int b)
+	{
+		return(l*b);
+	}
+    double area(float bs,float h)
+	{
+		return((bs*h)/2);
+	}
+};
+int main()
+{
+	func obj;
+	cout<<"AREA OF CIRCLE IS:"<<obj.area(5)<<endl;
+	cout<<"AREA OF RECTANGLE IS:"<<obj.area(5,5)<<endl;
+	cout<<"AREA OF TRIANGLE IS:"<<obj.area(4,5)<<endl;
+}

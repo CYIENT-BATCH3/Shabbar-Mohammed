@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+class person
+{
+public:
+	string name;
+	int age;
+	person(string person_name)
+	{
+		cout<<"CONSTRUCTOR"<<endl;
+		name=person_name;
+	}
+	void print()
+	{
+		cout<<"NAME IS:"<<name<<endl;
+		cout<<"AGE IS:"<<age<<endl;
+	}
+};
+int main()
+{
+	person obj("SHABBAR MOHAMMED");
+	obj.print();
+	return 0;
+}

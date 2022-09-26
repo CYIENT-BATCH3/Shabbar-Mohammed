@@ -1,0 +1,36 @@
+/*
+ * default_constr.cpp
+ *
+ *  Created on: Sep 21, 2022
+ *      Author: sm61828
+ */
+#include<iostream>    //preprocessor directive
+using namespace std;   //scope resolution operator
+class person     //declaring class 
+		{
+		private:    //access specifier
+	string name;   //class members
+	int age;
+		public:
+	person()     //constructor
+	{
+		cout<<"DEFAULT CONSTRUCTOR\n";
+		name="shabbar";   //initializing variable
+		age=23;     //initializing variables
+	}
+	void display()     //display function
+	{
+		cout<<"NAME IS:"<<name<<endl;   //printing name
+		cout<<"AGE IS:"<<age<<endl;    //printing age
+	}
+	~person()     //destructor
+	{
+		cout<<"DEFAULT DESTRUCTOR\n";
+	}
+		};
+int main()    // main function
+{
+	person obj;    //class object it is invoked when instance of class is created
+	obj.display();     //function call
+	return 0;
+}
