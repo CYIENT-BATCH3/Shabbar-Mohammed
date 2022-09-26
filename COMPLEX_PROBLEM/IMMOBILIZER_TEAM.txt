@@ -60,14 +60,14 @@
 
 #include<xc.h>
 #define _XTAL_FREQ 20000000
-char data_buf[11];
-void System_init();
-void can_rx_init();
-void set_baudrate();
+char data_buf[11];   //declaring array to receive id and data
+void System_init();  //declaring the function to configure interrupts  and for receiver to enable interrupt enable and interrupt priority
+void can_rx_init();  //declaring the function to configure tx/rx
+void set_baudrate();    //setting baudrate
 void can_rx_read();
 void set_mode();
 void get_mode();
-void __interrupt() ISR1();
+void __interrupt() ISR1();   //function to receive interrupt
 void mask();
 void filter();
 void CAN_TX();
