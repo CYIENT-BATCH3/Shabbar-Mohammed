@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class car
+{
+public:
+    car()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    car(string name,string brand)
+    {
+        myname=name;
+        car_brand=brand;
+        cout<<"parameterised constructor"<<endl;
+    }
+    car(string name,string brand,int cost)
+    {
+        myname=name;
+        car_brand=brand;
+        car_cost=cost;
+        cout<<"parameterised constructor"<<endl;
+    }
+    ~car()
+    {
+        cout<<"Destructor "<<myname<<endl;
+    }
+    void display()
+    {
+        cout<<"car brand is:"<<car_brand<<endl;
+        cout<<"car cost is:"<<car_cost<<endl;
+    }
+private:
+    string myname="aaa";
+    string car_brand="bbb";
+    int car_cost=0;
+};
+int main()
+{
+    car obj1;
+    obj1.display();
+    car obj2("shabbar","Lamborgini");
+    obj2.display();
+    car obj3("naveen","Ferrari",500000);
+    obj3.display();
+}

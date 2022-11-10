@@ -1,0 +1,59 @@
+
+#include<iostream>
+using namespace std;
+class Human
+{
+    
+  public:
+    Human()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    Human(string name,string colour)
+    {
+        myname=name;
+        Human_colour=colour;
+        cout<<"parameterised constructor"<<endl;
+    }
+    Human(string name,string hair_colour,int eye, int ears,int nose,int mouth)
+    {
+        myname=name;
+        Human_hair_colour=hair_colour;
+        Number_of_eye=eye;
+        Number_of_ears=ears;
+        Number_of_nose=nose;
+        Number_of_mouth=mouth;
+        cout<<"parameterised constructor"<<endl;
+    }
+    Human(string name,int hands,int legs,int heart,int lungs)
+    {
+        myname=name;
+        Number_of_hands=hands;
+        Number_of_legs=legs;
+        Number_of_hearts=heart;
+        Number_of_lungs=lungs;
+        cout<<"parameterised constructor"<<endl;
+    }
+    Human(string name,int Hand_fingers, int Leg_fingers)
+    {
+        myname=name;
+        Number_of_Hand_fingers=Hand_fingers;
+        Number_of_Leg_fingers=Leg_fingers;
+        cout<<"parameterised constructor"<<endl;
+    }
+    void print()
+    {
+        cout<<"Name"
+    }
+    
+    
+    
+    
+    
+private:
+    string myname;
+    string Human_colour;
+    string Human_hair_colour;
+    int Number_of_eye,Number_of_ears,Number_of_nose,Number_of_mouth;
+    int Number_of_hands.Number_of_legs,Number_of_hearts,Number_of_lungs;
+};

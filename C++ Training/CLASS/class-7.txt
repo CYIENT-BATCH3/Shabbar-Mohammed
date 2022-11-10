@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class headphone
+{
+public:
+    headphone()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    headphone(string name,string brand)
+    {
+        myname=name;
+        headphone_brand=brand;
+        cout<<"paramterised constructor"<<endl;
+    }
+    headphone(string name,string brand,int cost)
+    {
+        myname=name;
+        headphone_brand=brand;
+        headphone_cost=cost;
+        cout<<"parameterised constructor"<<endl;
+    }
+    ~headphone()
+    {
+        cout<<"Destructor "<<myname<<endl;
+    }
+    void display()
+    {
+        cout<<"headphone brand : "<<headphone_brand<<endl;
+        cout<<"headphone cost : "<<headphone_cost<<endl;
+    }
+private:
+    string myname="a";
+    string headphone_brand="b";
+    int headphone_cost=0;
+};
+int main()
+{
+    headphone obj;
+    obj.display();
+    headphone obj1("first","Boat");
+    obj1.display();
+    headphone obj2("second","apple",50000);
+    obj2.display();
+}

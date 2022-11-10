@@ -1,0 +1,91 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class chair
+{
+public:
+  chair()
+  {
+      cout<<"Chair constructor"<<endl;
+  }
+  ~chair()
+  {
+      cout<<"*******Chair destructor*******"<<endl;
+  }
+};
+class tables
+{
+public:
+     tables()
+     {
+         cout<<"Tables constructor"<<endl;
+     }
+     void setX(int x)
+    {
+        m_x=x;
+    }
+    int getX()
+    {
+        return m_x;
+    }
+     ~tables()
+     {
+         cout<<"*******Tables destructor*******"<<endl;
+     }
+private:
+      int m_x;
+};
+class training
+{
+public:
+    training()
+    {
+      cout<<"Training constructor"<<endl;
+      m_tables=new tables();
+      delete m_tables;
+      for(int i=0;i<10;i++)
+      {
+          m_chair[i]= new chair();
+      }
+      
+    }
+    
+    ~training()
+    {
+      cout<<"*******Training destructor*******"<<endl;  
+    //   for(int i=0;i<10;i++)
+    //   {
+    //   delete m_chair[i];
+    //   }
+    delete[] *m_chair;
+    }
+    void operator=(const training& rm)
+    {
+        cout<<"this operator overloading is called"<<endl;
+        int x=rm.m_tables->getX();
+        this->m_tables->setX(x);
+        //m_tables->m_x = rm.m_tables->m_x;
+        //this means current object
+        cout<<"Address "<<this<<endl;
+    }
+ private:
+   chair *m_chair[10];
+   tables *m_tables;
+};
+int main()
+{
+    cout<<"welcome to Training room"<<endl;
+    training room;
+    training room2;
+    for(int i=0;i<1;i++)
+    {
+        cout<<"**********start******************"<<endl;
+        training room3;
+        room= room3;  //assignment does a shallow copy.we need a deep copy
+        //room.operator=(room3)
+        cout<<"Address ="<< &room << endl;
+        cout<<"**********End********************"<<endl;
+    }
+    //room = room2;
+    cout<<"I am done with my program"<<endl;
+}

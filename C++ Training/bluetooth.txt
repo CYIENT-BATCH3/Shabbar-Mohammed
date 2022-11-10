@@ -1,0 +1,88 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class Bluetooth
+{
+  public:
+    Bluetooth()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    Bluetooth(int version,int range)
+    {
+        b_version=version;
+        b_range=range;
+        cout<<"parameterised constructor"<<endl;
+        cout<<"Bluetooth version is : "<<b_version<<endl;
+        cout<<"Bluetooth Range is : "<<b_range<<endl;
+    }
+    ~Bluetooth()
+    {
+        cout<<"Destructor is called "<<endl;
+    }
+    void read();
+    void write();
+ private:
+  int b_version,b_range;
+};
+class Usb_device
+{
+  public:
+    Usb_device()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    Usb_device(string brand,int price)
+    {
+        u_brand=brand;
+        u_price=price;
+        cout<<"parameterised constructor"<<endl;
+        cout<<"Usb device brand  is : "<<u_brand<<endl;
+        cout<<"Usb device price is : "<<u_price<<endl;
+    }
+    ~Usb_device()
+    {
+        cout<<"Destructor is called "<<endl;
+    }
+    void read();
+    void write();
+ private:
+  string u_brand;
+  int u_price;
+};
+void Bluetooth::read()
+{
+    cout<<"Read is called "<<endl;
+}
+void Bluetooth::write()
+{
+    cout<<"Write is called "<<endl;
+}
+void Usb_device::read()
+{
+    cout<<"Read is called "<<endl;
+}
+void Usb_device::write()
+{
+    cout<<"Write is called "<<endl;
+}
+int main()
+{
+  Bluetooth obj;
+  obj.read();
+  obj.write();
+  Bluetooth obj1(6,100);
+  Usb_device obj2();
+  obj2.read();
+  obj2.write();
+  Usb_device obj3("Boat",500);
+}

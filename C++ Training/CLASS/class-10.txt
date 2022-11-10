@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class mouse
+{
+public:
+  mouse()
+  {
+      cout<<"default constructor"<<endl;
+  }
+  mouse(string name,string type)
+  {
+      myname=name;
+      mouse_type=type;
+      cout<<"paramterised constructor"<<endl;
+  }
+  mouse(string name,string type,int cost)
+  {
+      myname=name;
+      mouse_type=type;
+      mouse_cost=cost;
+      cout<<"paramterised constructor"<<endl;
+  }
+  ~mouse()
+  {
+      cout<<"Destructor "<<myname<<endl;
+  }
+  void display()
+  {
+       cout<<"printer type "<<mouse_type<<endl;
+       cout<<"printer cost "<<mouse_cost<<endl;
+  }
+private:
+  string myname;
+  string mouse_type;
+  int mouse_cost;
+};
+int main()
+{
+    mouse obj;
+    obj.display();
+    mouse obj2("first","wireless");
+    obj2.display();
+    mouse obj3("second","wired",50000);
+    obj3.display();
+}

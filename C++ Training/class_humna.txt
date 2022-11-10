@@ -1,0 +1,69 @@
+#include<iostream>
+using namespace std;
+class eye
+{
+  public:
+    eye()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    eye(string name,string colour, int eye)
+    {
+        myname=name;
+        eye_ball_colour=colour;
+        number_of_eye=eye;
+        cout<<"paramterised constructor"<<endl;
+    }
+    void display()
+    {
+        cout<<"Eye ball colour "<<eye_ball_colour<<endl;
+        cout<<"Number of eye "<<number_of_eye<<endl;
+    }
+    ~eye()
+    {
+        cout<<"Destructor "<<myname<<endl;
+    }
+  private:
+  string eye_ball_colour,myname;
+  int number_of_eye;
+};
+class hair
+{
+ public:
+    hair()
+    {
+        cout<<"paramterised constructor"<<endl;
+    }
+    hair(string name,string hair)
+    {
+      hair_colour=hair;
+      cout<<"paramterised constructor"<<endl;
+    }
+~hair()
+{
+    cout<<"Destructor"<<myname<<endl;
+}
+private:
+ string myname,hair_colour;
+};
+class nose
+{
+ public:
+  nose()
+  {
+      cout<<"Default constructor"<<endl;
+  }
+  nose(string name,int nose)
+  {
+      myname=name;
+      number_of_nose=nose;
+      cout<<"paramterised constructor"<<endl;
+  }
+};
+int main()
+{
+    eye eye_obj;
+    eye_obj.display();
+    eye eye_obj2("aaa","black",2);
+    eye_obj2.display();
+}

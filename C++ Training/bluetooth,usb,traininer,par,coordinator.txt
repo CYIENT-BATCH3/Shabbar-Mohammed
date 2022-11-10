@@ -1,0 +1,154 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class Bluetooth
+{
+  int speed;
+  string m_company;
+  int serial_nu;
+  public:
+   Bluetooth()
+   {
+       cout<<"constructor Bt"<<endl;
+   }
+   ~Bluetooth()
+   {
+       cout<<"Destructor Bt"<<endl; 
+   }
+   void read()
+   {
+       cout<<"Read is called"<<endl;
+   }
+   void write()
+   {
+       cout<<"Write is called"<<endl;
+   }
+};
+class usb
+{
+  int speed;
+  string m_company;
+  int serial_nu;
+  public:
+    public:
+   usb()
+   {
+      cout<<"constructor usb"<<endl; 
+   }
+   ~usb()
+   {
+      cout<<"Destructor usb"<<endl; 
+   }
+   void read()
+   {
+     cout<<"Read is called"<<endl;  
+   }
+   void write()
+   {
+     cout<<"Write is called"<<endl;
+   }
+};
+class keyboard
+{
+  int speed;
+  string m_company;
+  int serial_nu;
+  public:
+    public:
+   keyboard()
+   {
+      cout<<"constructor keyboard"<<endl; 
+   }
+   ~keyboard()
+   {
+      cout<<"Destructor keyboard"<<endl; 
+   }
+   void read()
+   {
+     cout<<"Read is called"<<endl;  
+   }
+   void write()
+   {
+     cout<<"Write is called"<<endl;
+   }
+};
+class mouse
+{
+  int speed;
+  string m_company;
+  int serial_nu;
+  public:
+   mouse()
+   {
+      cout<<"constructor mouse"<<endl; 
+   }
+   ~mouse()
+   {
+      cout<<"Destructor mouse"<<endl; 
+   }
+   void read()
+   {
+     cout<<"Read is called"<<endl;  
+   }
+   void write()
+   {
+     cout<<"Write is called"<<endl;
+   }
+};
+class trainer
+{
+    private:
+  string name;
+  int id;
+  public:
+   void print()
+   {
+       cout<<"Name = "<<name<<endl;
+   }
+};
+class participate
+{
+    private:
+      string name;
+      int id;
+  public:
+   void print()
+   {
+       cout<<"Name = "<<name<<endl;
+   }
+};
+class coordinator
+{
+    private:
+  string name;
+  int id;
+  public:
+   void print()
+   {
+       cout<<"Name = "<<name<<endl;
+   }
+};
+class Devmanager
+{
+    
+};
+//define a b c should have name id and print function
+int main() {
+    cout<<"Welcome"<<endl;
+   Bluetooth *b=new Bluetooth;
+   b->read();
+   b->write();
+   delete b;
+   usb *u=new usb;
+   u->read();
+   u->write();
+   delete u;
+   keyboard *k=new keyboard;
+   k->read();
+   k->write();
+   delete k;
+   mouse *m=new mouse;
+   m->read();
+   m->write();
+   delete m;
+}

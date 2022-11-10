@@ -1,0 +1,231 @@
+//wap 5 classes 3-4 members 
+#include <iostream>
+
+using namespace std;
+class Mobile
+{
+private:
+    string mobile_brand;
+    int price;
+    int display_size;
+    static int m_mobile_count;
+public:
+    void reset_mobile()
+    {
+    mobile_brand="samsung";
+    price=0;
+    display_size=0;
+    //m_mobile_count=0;
+    m_mobile_count++;
+    }
+    void init_mobile(string brd, int pc, int sz)
+    {
+        mobile_brand=brd;
+        price=pc;
+        display_size=sz;
+    }
+    void start_vedio()
+    {
+        cout<< "start vedio recording" << endl;
+    }
+    void vedio_recording()
+    {
+        cout<< "recording the vedio" << endl;
+    }
+    void end_vedio()
+    {
+        cout<< "vedio recording ended" << endl;
+    }
+    void print_mobile_count()
+    {
+        cout<<"number of members:"<<m_mobile_count<< endl;
+    }
+
+};
+class projector
+{
+private:
+  string projector_brand;
+  int cost;
+  string vedio_quality;
+public:
+  void reset_projector()
+  {
+      projector_brand="casio";
+      cost=0;
+      vedio_quality="hd";
+  }
+  void init_projector(string cpm_name,int co,string qt)
+  {
+      projector_brand=cpm_name;
+      cost=co;
+      vedio_quality=qt;
+  }
+  void start()
+  {
+      cout<<"projector is ON"<<endl;
+  }
+  void display()
+  {
+      cout<<"Projector starts displaying"<<endl;
+  }
+  void stop_display()
+  {
+      cout<<"projector stops displaying"<<endl;
+  }
+};
+class smart_watch
+{
+private:
+  string type;
+  int screen_size;
+  int watch_cost;
+public:
+  void reset_sm_wt()
+  {
+      type="wifi";
+      screen_size=0;
+      watch_cost=0;
+  }
+  void init_sm_wt(string tp,int ss,int wc)
+  
+  {
+      type=tp;
+      screen_size=ss;
+      watch_cost=wc;
+  }
+  void display_time()
+  {
+      cout<<"displaying time"<<endl;
+  }
+  void display_spo2()
+  {
+      cout<<"displaying spo2"<<endl;
+  }
+  void display_heartrate()
+  {
+      cout<<"displaying heart rate"<<endl;
+  }
+};
+class Book
+{
+private:
+  string book_type;
+  int book_size;
+  int book_pages;
+  string book_brand;
+public:
+  void reset_book()
+  {
+    book_type="plain";
+    book_size=0;
+    book_pages=0;
+    book_brand="classmate";
+  }
+  void init_book(string tpe,int s,int p,string b)
+  {
+    book_type=tpe;
+    book_size=s;
+    book_pages=p;
+    book_brand=b;
+  }
+  void opening_book()
+  {
+      cout<<"Book is open"<<endl;
+  }
+  void reading_book()
+  {
+      cout<<"reading book"<<endl;
+  }
+  void writing_book()
+  {
+      cout<<"writing in book"<<endl;
+  }
+  void closing_book()
+  {
+      cout<<"closing the book"<<endl;
+  }
+};
+class bluetooth_headphone
+{
+private:
+  int drivers_type;
+  string headphone_colour;
+  string headphone_brand;
+public:
+  void reset_blu_headphone()
+  {
+      drivers_type=5;
+      headphone_colour="red";
+      headphone_brand="apple";
+  }
+  void init_blu_headphone(int dri,string cl,string bd)
+  {
+    drivers_type=dri;
+    headphone_colour=cl;
+    headphone_brand=bd;
+  }
+  void turn_on()
+  {
+      cout<<"turning on bluetooth_headphone"<<endl;
+  }
+  void play_music()
+  {
+      cout<<"music is playing"<<endl;
+  }
+  void noise_cancellation()
+  {
+      cout<<"outside noise has been reduced"<<endl;
+  }
+  void turn_off()
+  {
+      cout<<"turning off bluetooth_headphone"<<endl;
+  }
+};
+int Mobile::m_mobile_count=0;
+int main()
+{
+    cout<<"class-1"<<endl;
+    Mobile apple;
+    apple.reset_mobile();
+    apple.init_mobile("apple",20,7);
+    apple.start_vedio();
+    apple.vedio_recording();
+    apple.end_vedio();
+    apple.print_mobile_count();
+    cout<<"class-2"<<endl;
+    projector casio;
+    casio.reset_projector();
+    casio.init_projector("casio",5000,"hd");
+    casio.start();
+    casio.display();
+    casio.stop_display();
+    //casio.print_mobile_count();
+    cout<<"class-3"<<endl;
+    smart_watch samsung;
+    samsung.reset_sm_wt();
+    samsung.init_sm_wt("cellular",15,5000);
+    samsung.display_time();
+    samsung.display_spo2();
+    samsung.display_heartrate();
+    //samsung.print_mobile_count();
+    cout<<"class-4"<<endl;
+    Book classmate;
+    classmate.reset_book();
+    classmate.init_book("ruled",10,200,"apsara");
+    classmate.opening_book();
+    classmate.reading_book();
+    classmate.writing_book();
+    classmate.closing_book();
+    //classmate.print_mobile_count();
+    cout<<"class-5"<<endl;
+    bluetooth_headphone earpods;
+    earpods.reset_blu_headphone();
+    earpods.init_blu_headphone(10,"blue","apple");
+    earpods.turn_on();
+    earpods.play_music();
+    earpods.noise_cancellation();
+    earpods.turn_off();
+    //earpods.print_mobile_count();
+    return 0;
+}

@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class printer
+{
+public:
+  printer()
+  {
+      cout<<"default constructor"<<endl;
+  }
+  printer(string name,string type)
+  {
+      myname=name;
+      printer_type=type;
+      cout<<"paramterised constructor"<<endl;
+  }
+  printer(string name,string type,int cost)
+  {
+      myname=name;
+      printer_type=type;
+      printer_cost=cost;
+      cout<<"paramterised constructor"<<endl;
+  }
+  ~printer()
+  {
+      cout<<"Destructor "<<myname<<endl;
+  }
+  void display()
+  {
+       cout<<"printer type "<<printer_type<<endl;
+       cout<<"printer cost "<<printer_cost<<endl;
+  }
+private:
+  string myname;
+  string printer_type;
+  int printer_cost;
+};
+int main()
+{
+    printer obj;
+    obj.display();
+    printer obj2("first","Colour");
+    obj2.display();
+    printer obj3("second","Colour",50000);
+    obj3.display();
+}

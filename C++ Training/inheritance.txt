@@ -1,0 +1,70 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class A
+{
+private:
+    int x;
+public:
+    int y;
+protected:
+    int z;
+    
+};
+class B:public A
+{
+    // x is accessible ?  not at all accessible
+    // y is accessible ?  yes it is accessible
+    //z is accessible?    yes it is accessible
+public:
+    void print()
+    {
+          //cout<<"X = "<<x<<" "<<endl;
+        cout<<"Y = "<<y<<" "<<"Z = "<<z<<endl;
+    }
+};
+class D:private A
+{
+    // x is accessible ?  not at all accessible
+    // y is accessible ?  yes it is accessible(is converted to private)
+    //z is accessible?    yes it is accessible(is converted to private)
+public:
+    void print()
+    {
+        //cout<<"X = "<<x<<" "<<endl;
+        cout<<"Y = "<<y<<" "<<"Z = "<<z<<endl;
+    }
+};
+class DD:private D
+{
+    void print()
+    {
+        //cout<<"X = "<<x<<" "<<endl;
+        cout<<"Y = "<<y<<" "<<"Z = "<<z<<endl;
+    }
+};
+class E: protected A
+{
+     // x is accessible ?  not at all accessible
+    // y is accessible ?  yes it is accessible(is converted to protected)
+    //z is accessible?    yes it is accessible(is converted to protected)
+    //cout<<"X = "<<x<<" "<<endl;
+   void print()
+    {
+        //cout<<"X = "<<x<<" "<<endl;
+        cout<<"Y = "<<y<<" "<<"Z = "<<z<<endl;
+    }
+};
+class C:public B
+{
+    
+};
+int main() {
+   cout<<"Welcome to inheritance"<<endl;
+   D obj;
+   obj.y = 100;
+   B obj1;
+   obj1.y=200;
+   E obj2;
+   obj2.y=300;
+}

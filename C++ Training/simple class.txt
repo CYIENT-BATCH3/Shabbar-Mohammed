@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+class mobile{
+public:
+string name_brand;
+string processor_name; 
+int cost;
+};
+int main()
+{
+mobile obj;
+obj.name_brand="apple";
+obj.processor_name="A15";
+obj.cost=50000;
+cout<<obj.name_brand;
+cout<<"\n";
+cout<<obj.processor_name;
+cout<<"\n";
+cout<<obj.cost;
+}
+

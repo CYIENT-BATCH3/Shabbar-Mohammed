@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+//inLine initialization
+class student
+{
+public:
+//inline initialization
+//order of initialization matches order of declaration
+    student():m_uid(0),m_name("empty"),m_fone(88888888)
+    {
+        // m_uid=0;
+        // m_name="empty";
+        cout<<"student constructor"<<endl;
+    }
+    ~student()
+    {
+        cout<<"student destructor"<<endl;
+    }
+private:
+   int m_uid;
+   string m_name;
+   int m_fone;
+};
+int main()
+{
+    cout<<"welcome to Training room"<<endl;
+    student st;
+    cout<<"I am done with my program"<<endl;
+}

@@ -1,0 +1,68 @@
+#include<iostream>
+using namespace std;
+class mobile
+{
+    public:
+    mobile()
+    {
+        cout<<"default constructor"<<endl;
+    }
+    mobile(string name, string brand)
+    {
+      myname=name;
+      mobile_brand=brand;
+      cout<<endl<<"Parameterised constructor for first class"<<endl;
+    }
+    mobile(string name,string brand, int price)
+    {
+        myname=name;
+        mobile_brand=brand;
+        mobile_price=price;
+        cout<<"Parameterised constructor for first class"<<endl;
+    }
+    mobile(string name, string brand, int price, string colour)
+    {
+        myname=name;
+       mobile_brand=brand;
+       mobile_price=price;
+       mobile_colour=colour;
+        cout<<"Parameterised constructor for third class"<<endl;
+    }
+    void display()
+    {
+        cout<<"MOBILE BRAND:"<<mobile_brand<<endl;
+        cout<<"MOBILE PRICE:"<<mobile_price<<endl;
+        cout<<"MOBILE COLOUR:"<<mobile_colour<<endl;
+        cout<<"MOBILE NUMBER:"<<mobile_number<<endl;
+        cout<<"MOBILE PROCESSOR:"<<mobile_processor<<endl;
+    }
+    ~mobile()
+    {
+        cout<<"mobile class destructor"<<" "<<myname<<endl;
+    }
+    private:
+    string mobile_brand="a";
+    int mobile_price=0;
+    string mobile_colour="blue";
+    int mobile_number=0;
+    string mobile_processor="A15";
+    string myname="mobile";
+};
+int main()
+{
+    cout<<"*********CLASS 1*******"<<endl;
+    mobile obj1,obj9,obj10,obj5;
+    obj1.display();
+    mobile obj2("First","apple");
+    obj2.display();
+    mobile obj3("Second","redmi",5000);
+    obj3.display();
+    mobile obj4("Third","samsung",20000,"red");
+    obj4.display();
+    mobile obj6("Fourth","nokia");
+    obj6.display();
+    mobile obj7("Fifth","blackberry",50000);
+    obj7.display();
+    mobile obj8("Sixth","mi",10000,"black");
+    obj8.display();
+}

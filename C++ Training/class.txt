@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+class Mycar
+{
+private:
+    int car_height;
+    int car_weight;
+    string car_colour;
+public:
+    void stop()
+    {
+        cout<< "stop the car" << endl;
+    }
+    void start()
+    {
+        cout<< "start the car" << endl;
+    }
+    void move()
+    {
+        cout<< "car is moving" << endl;
+    }
+
+};
+
+int main()
+{
+    Mycar car1;
+    //car1.car_height=10;
+    car1.start();
+    car1.move();
+    car1.stop();
+    cout<<"car-2"<<endl;
+    Mycar car2;
+    car2.start();
+    car2.move();
+    car2.stop();
+    Mycar car3;
+    Mycar car4;
+    return 0;
+}

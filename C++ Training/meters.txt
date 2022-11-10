@@ -1,0 +1,22 @@
+class Mymeter
+{
+public:
+ Mymeter();
+ ~Mymeter();
+private:
+int m_kw;
+int m_no;
+};
+Mymeter::Mymeter()
+
+{
+cout<<"Meter"<<m_no<<endl;
+}
+Mymeter::~Mymeter()
+{
+cout<<"Destructor"<<endl;
+}
+int main()
+{
+cout<<"Electrical meters"<<endl;
+}

@@ -1,0 +1,120 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+class person
+{
+public:
+  person ();			//default constructor
+  person (string name, int x);	//paramterised constructor
+  //add getter and setter function
+  void setname(string name);
+  string getname() const;
+  void setu_id(int u) const;
+  int getid() const;
+   ~person ();
+
+
+private:
+    string m_name;
+  int m_uid;
+};
+person::person ()
+{
+  cout << "Person constructor" << endl;
+}
+person::person(string name,int x)
+{
+    m_name=name;
+    m_uid=x;
+    cout << "Person param-constructor" << endl;
+}
+void person::setname(string name)
+{
+    cout << "Setting the value" << endl;
+    m_name=name;
+}
+//const-this method should not modify any member varaible
+string person::getname() const
+{
+    //m_name="shabbar";
+    return m_name;
+}
+int setu_id(int u) const{
+    cout<<"Setting the value"<<endl;
+    m_uid=u;
+}
+int getid() const
+{
+    return m_uid;
+}
+
+person::~person ()
+{
+   // m_name="shabbar";
+  cout << "Person Destructor " <<m_name << endl;
+}
+
+int callme ()
+{
+  cout << "Dynamic memory program" << endl;
+  int x;
+  cout << "Address of x is :" << &x << endl;
+  //person ab;
+  person *per1 = new person;
+  delete per1;
+  new person;			//memory leak
+  cout << "Returning from callme" << endl;
+  return 10;
+}
+
+int main ()
+{
+  //person obj("shabbar",61828);
+  cout << "Dynamic memory program" << endl;
+  callme ();
+  int *p = new int;		//for c++ dynamic memory allocation new is used for object creation
+  //int *p=malloc(4); //for c dynamic memory allocation malloc is used it allocates the block of memory
+  person *per = new person;
+  per->setname("shabbar");
+  per->setu_id("61828");
+  cout<<"My name "<< per->getname();
+  cout<<"my id "<< per->getid();
+  return 0;
+}
+
+int
+main1 ()
+{
+  cout << "Dynamic memory program" << endl;
+  int a;
+  char b;
+  string c;
+  person per;
+  cout << "Address of a is :" << &a << endl;
+  cout << "Address of c is :" << &c << endl;
+  cout << "Address of per is :" << &per << endl;
+  //int Addressofa=&a;
+  //int* is another datatype
+  int *myadd = &a;
+  // int* mystringadd=&c; it is not allowed as c is string not an integer type
+
+
+  string *mystringadd = &c;
+  int *md = nullptr;
+  md = (int *) (mystringadd);
+
+  //int* objectAddress=&per; not allowed because per is person datatype
+  person *objaddress = &per;
+  
+
+  callme ();
+  return 0;
+}

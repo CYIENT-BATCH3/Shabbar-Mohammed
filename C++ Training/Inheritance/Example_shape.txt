@@ -1,0 +1,146 @@
+#include <iostream>
+using namespace std;
+class Shape
+{
+public:
+  Shape ()
+  {
+    cout << "Shape constructor" << endl;
+  }
+   ~Shape ()
+  {
+    cout << "Shape destructor" << endl;
+  }
+  void setvalue ()
+  {
+    length = 50;
+  }
+  void print ()
+  {
+    cout << "Length of shape is :" << length << endl;
+  }
+  void Draw ()
+  {
+    cout << "Draw of shape is called" << endl;
+  }
+protected:
+  int length;
+};
+
+class rectangle:public Shape
+{
+public:
+  rectangle ()
+  {
+    cout << "Rectangle constructor" << endl;
+  }
+   ~rectangle ()
+  {
+    cout << "Rectangle destructor" << endl;
+  }
+  void print ()
+  {
+    cout << "length of rectangle is :" << length << endl;
+  }
+  void Draw ()
+  {
+    cout << "Draw rectangle is called" << endl;
+  }
+};
+
+class triangle:public Shape
+{
+public:
+  triangle ()
+  {
+    cout << "Triangle constructor" << endl;
+  }
+   ~triangle ()
+  {
+    cout << "Triangle destructor" << endl;
+  }
+  void print ()
+  {
+    cout << "length of triangle is :" << length << endl;
+  }
+  void Draw ()
+  {
+    cout << "Draw of triangle is called" << endl;
+  }
+};
+
+class Line:public Shape
+{
+public:
+  Line ()
+  {
+    cout << "Line constructor" << endl;
+  }
+   ~Line ()
+  {
+    cout << "Line destructor" << endl;
+  }
+  void print ()
+  {
+    cout << "length of line is :" << length << endl;
+  }
+  void Draw ()
+  {
+    cout << "Draw of line is called" << endl;
+  }
+};
+
+class polygon:public Shape
+{
+public:
+  polygon ()
+  {
+    cout << "Polygon constructor" << endl;
+  }
+   ~polygon ()
+  {
+    cout << "Polygon destructor" << endl;
+  }
+  void print ()
+  {
+    cout << "length of Polygon is :" << length << endl;
+  }
+  void Draw ()
+  {
+    cout << "Draw of Polygon is called" << endl;
+  }
+};
+
+int
+main ()
+{
+  cout << "Welcome to the world of shapes" << endl;
+  Shape *obj = nullptr;
+  obj = new Shape;
+  obj->setvalue ();
+  obj->print ();
+  obj->Draw ();
+
+
+  obj = new rectangle;
+  obj->setvalue ();
+  obj->print ();
+  obj->Draw ();
+
+
+  obj = new triangle;
+  obj->setvalue ();
+  obj->print ();
+  obj->Draw ();
+
+  obj = new Line;
+  obj->setvalue ();
+  obj->print ();
+  obj->Draw();
+
+  obj = new polygon;
+  obj->setvalue ();
+  obj->print ();
+  obj->Draw();
+  delete obj;
+}

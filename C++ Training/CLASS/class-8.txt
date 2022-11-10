@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+class bag
+{
+public:
+    bag()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    bag(string name,int capacity)
+    {
+        myname=name;
+        bag_capacity=capacity;
+        cout<<"parameterised constructor"<<endl;
+    }
+    bag(string name,int capacity,string brand)
+    {
+        myname=name;
+        bag_capacity=capacity;
+        bag_brand=brand;
+        cout<<"parameterised constructor"<<endl;
+    }
+    bag(string name,int capacity,string brand,int cost)
+    {
+        myname=name;
+        bag_capacity=capacity;
+        bag_brand=brand;
+        bag_cost=cost;
+        cout<<"parameterised constructor"<<endl;
+    }
+    ~bag()
+    {
+        cout<<"Destructor "<<myname<<endl;
+    }
+    void display()
+    {
+        cout<<"Bag brand is :"<<bag_brand<<endl;
+        cout<<"Bag capacity is :"<<bag_capacity<<endl;
+        cout<<"Bag cost is:"<<bag_cost<<endl;
+    }
+private:
+    string myname="aaa";
+    int bag_capacity=0;
+    string bag_brand="bbb";
+    int bag_cost=0;
+};
+int main()
+{
+    bag obj;
+    obj.display();
+    bag obj2("first",50);
+    obj.display();
+    bag obj3("second",50,"safari");
+    obj3.display();
+    bag obj4("third",60,"safari",1500);
+    obj4.display();
+}

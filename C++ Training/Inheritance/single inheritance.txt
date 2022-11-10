@@ -1,0 +1,61 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class Device_manager
+{
+ public:
+  int speed=100;
+ private:
+  string company="abc";
+ protected:
+  int id=5125;
+  public:
+  Device_manager()
+  {
+      cout<<"Device manager constructor"<<endl;
+  }
+  ~Device_manager()
+  {
+      cout<<"Device manager Destructor"<<endl; 
+  }
+};
+// class Bluetooth:public Device_manager
+// {
+//     public:
+//     Bluetooth()
+//     {
+//          cout<<"Bluetooth constructor"<<endl;
+//     }
+//     ~Bluetooth()
+//     {
+//          cout<<"Bluetooth Destructor"<<endl;
+//     }
+//     void print()
+//     {
+//         cout<<"Speed is : " <<speed<<endl;
+//         //cout<<"company is : " <<company<<endl; //it is not accessible
+//         cout<<"ID is : " <<id<<endl;
+//     }
+// };
+class Bluetooth:private Device_manager
+{
+    public:
+    Bluetooth()
+    {
+         cout<<"Bluetooth constructor"<<endl;
+    }
+    ~Bluetooth()
+    {
+         cout<<"Bluetooth Destructor"<<endl;
+    }
+    void print()
+    {
+        cout<<"Speed is : " <<speed<<endl;
+        cout<<"company is : " <<company<<endl; //it is not accessible
+        cout<<"ID is : " <<id<<endl;
+    }
+};
+int main() {
+    cout<<"Welcome to inheritance"<<endl;
+    Device_manager obj;
+}

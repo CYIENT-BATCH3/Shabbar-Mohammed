@@ -1,0 +1,110 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class Device
+{
+ public:
+  int speed;
+ private:
+  string company;
+ protected:
+  int id;
+  public:
+  Device()
+  {
+      cout<<"Device  constructor"<<endl;
+  }
+  ~Device()
+  {
+      cout<<"Device  Destructor"<<endl; 
+  }
+  void setvalue()
+  {
+      speed=200;
+      company="jbl";
+      id=5125;
+  }
+  void print()
+  {
+      //setvalue();
+      cout<<"Speed is : " <<speed<<endl;
+      cout<<"company is : " <<company<<endl; 
+      cout<<"ID is : " <<id<<endl;
+  }
+};
+
+class Bluetooth:public Device
+{
+    
+    public:
+    Bluetooth()
+    {
+         cout<<"Bluetooth constructor"<<endl;
+    }
+    ~Bluetooth()
+    {
+         cout<<"Bluetooth Destructor"<<endl;
+    }
+    void setvalue()
+  {
+      speed=500;
+      //company="boat";
+      id=5165;
+  }
+    void print()
+    {
+        cout<<"Bluetooth Speed is : " <<speed<<endl;
+        //cout<<"company is : " <<company<<endl; 
+        cout<<"Bluetooth ID is : " <<id<<endl;
+    }
+};
+class Keyboard:public Device
+{
+    public:
+    Keyboard()
+    {
+         cout<<"Keyboard constructor"<<endl;
+    }
+    ~Keyboard()
+    {
+         cout<<"Keyboard Destructor"<<endl;
+    }
+    void setvalue()
+  {
+      speed=500;
+      //company="apple";
+      id=1546;
+  }
+    void print()
+    {
+        cout<<"Keyboard Speed is : " <<speed<<endl;
+      // cout<<"company is : " <<company<<endl; Not accessible
+        cout<<"Keyboard ID is : " <<id<<endl;
+        
+    }
+};
+int main() 
+{
+    cout<<"Welcome to inheritance"<<endl;
+    // Device obj;
+    // obj.setvalue();
+    // obj.print();
+    // Bluetooth obj2;
+    // obj2.setvalue();
+    // obj2.print();
+    // Keyboard obj3;
+    // obj3.setvalue();
+    // obj3.print();
+    Device* obj=nullptr;
+    obj = new Device;
+    obj->setvalue();
+    obj->print();
+    //redefining the same function with same name is called method overriding
+    
+    
+    obj = new Bluetooth;  //this is allowed  because bluetooth is derived from the Device
+    obj->print();
+    
+    obj = new Keyboard;
+    obj->print();
+}

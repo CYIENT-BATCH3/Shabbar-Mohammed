@@ -1,0 +1,78 @@
+#include <iostream>
+
+using namespace std;
+class participants
+{
+public:
+  participants()
+  {
+      cout<<"participants created"<<endl;
+      
+  }
+  participants(string name,int id)
+  {
+      p_name=name;
+      p_id=id;
+      cout<<"participants "<<" "<<"Name: "<<p_name<<" "<<"ID: " <<p_id<<endl;
+  }
+  void create_participants();
+ private:
+ string p_name="abc";
+ int p_id=0,p_height,e_weight,e_age;
+ int p[20];
+  
+};
+
+class training_room
+{
+public:
+    training_room()
+    {
+        cout<<"Training room created"<<endl;
+        create_participants();
+    }
+    void create_participants();
+    int setname(string name);
+    string getname() const;
+    training_room(const training_room& t);
+    ~training_room()
+    {
+        cout<<"Destructor is called"<<endl;
+    }
+};
+void training_room::create_participants()
+{
+    participants *p[15];
+    for(int i=0;i<15;i++)
+    {
+        
+            p[i]=new participants;
+    }
+}
+training_room::training_room(const training_room& t)
+{
+    
+    cout<<"Training room created from first training room" <<endl;
+    create_participants();
+    // p_name=t.p_name;
+    // p_id=t.p_id;
+}
+//int training_room::setname(string name)
+// {
+    
+// }
+int main()
+{
+    cout<<"welcome"<<endl;
+    training_room tr;
+    training_room tr2(tr);
+    training_room tr3(tr2);
+    training_room tr4(tr3);
+    training_room tr5(tr4);
+    training_room tr6(tr5);
+    training_room tr7(tr6);
+    training_room tr8(tr7);
+    training_room tr9(tr8);
+    training_room tr10(tr9);
+    return 0;
+}

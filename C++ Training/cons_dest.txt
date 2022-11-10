@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+class x
+{
+public:
+x(string name);
+x(string name, int arg1)
+{
+    j=arg1;
+    m_myname=name;
+    cout<<"param-constructor with 1 argument"<<endl;
+}
+x(string name, int a, int b)
+{
+    i=a;
+    j=b;
+    m_myname=name;
+    cout<<"param-constructor with 2 argument"<<endl;
+}
+x(string name, int a1,int a2,int a3)
+{
+    i=a1;
+    j=a2;
+    k=a3;
+    m_myname=name;
+    cout<<"param-constructor with 3 argument"<<endl;
+}
+~x()
+{
+    cout<<"destructor"<<" "<<m_myname<<endl;
+}
+private:
+    int i;
+public:
+    int j,k;
+    string m_myname;
+};
+
+x::x(string name)     //constructor
+{
+    m_myname=name;
+  i=j=k=0; 
+  cout<<"i am a constructor"<<endl;
+}
+
+int main()
+{
+    cout<<"calling constructor"<<endl;
+    x x1("shabbar");
+    x x3("akhil",4);
+    x x4("naveen",1,2);
+    x x5("karun",1,2,3);
+  return 0;  
+}

@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+class x
+{
+private:
+int i;
+public:
+int j,k;
+x()     //constructor
+{
+  i=j=k=0; 
+  cout<<"i am a constructor"<<endl;
+}
+};
+int main()
+{
+    cout<<"calling constructor"<<endl;
+    x object_cl;
+  return 0;  
+}

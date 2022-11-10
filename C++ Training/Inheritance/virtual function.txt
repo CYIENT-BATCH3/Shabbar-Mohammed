@@ -1,0 +1,109 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+//this will be a VTBL(virtual table)={0x2000}.it is present at  address 0x8000
+//there will VPTR virtual table pointer
+class Device
+{
+ public:
+  int speed;
+ private:
+  string company;
+ protected:
+  int id;
+  public:
+  Device()
+  {
+      
+      cout<<"Device  constructor"<<endl;
+  }
+  virtual ~Device()
+  {
+      cout<<"**********Device  Destructor********************"<<endl; 
+  }
+  void setvalue(int x)
+  {
+      speed=x;
+      
+  }
+  virtual void print()     //assume 0x2000
+  {
+      //setvalue();
+      cout<<"Speed is : " <<speed<<endl;
+    
+  }
+};
+//this will be a VTBL(virtual table)={0x3000}.it is present at  address 0x15000
+//there will VPTR virtual table pointer
+class Bluetooth:public Device
+{
+    
+    public:
+    Bluetooth()
+    {
+        
+        cout<<"Bluetooth constructor"<<endl;
+    }
+    ~Bluetooth()
+    {
+         cout<<"***********Bluetooth Destructor******************"<<endl;
+    }
+    void setvalue(int x)
+  {
+      speed=x;
+      
+  }
+    void print()
+    {
+        cout<<"Bluetooth Speed is : " <<speed<<endl;
+        
+    }
+};
+class Keyboard:public Device
+{
+    public:
+    Keyboard()
+    {
+       
+         cout<<"Keyboard constructor"<<endl;
+    }
+    ~Keyboard()
+    {
+         cout<<"**********Keyboard Destructor*****************"<<endl;
+    }
+    void setvalue(int x)
+  {
+      speed=x;
+      
+  }
+   void print()
+    {
+        cout<<"Keyboard Speed is : " <<speed<<endl;
+     
+        
+    }
+};
+int main() 
+{
+    cout<<"Welcome to inheritance"<<endl;
+    Device* obj=nullptr;   //address variable type is base type
+    obj = new Device;     //here object is a base
+    cout<<" obj "<< obj<<endl;
+    obj->setvalue(100);
+    obj->print();
+    //redefining the same function with same name is called method overriding
+     delete obj;
+    
+    obj = new Bluetooth;  //this is allowed  because bluetooth is derived from the Device
+    //Deriver object address is assigned to the base address variable
+    obj->setvalue(200);
+    obj->print();
+     cout<<" obj "<< obj<<endl;
+     delete obj;
+    obj = new Keyboard;
+    obj->setvalue(300);
+    obj->print();  //it will access vptr obj
+    cout<<" obj "<< obj<<endl;
+    delete obj;
+    //virtual keyword is used prefix of void print so that compiler understand that it should call print function depend upon the type of object.
+}

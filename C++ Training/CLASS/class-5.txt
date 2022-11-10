@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+class laptop
+{
+public:
+    laptop()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    laptop(string name,string brand)
+    {
+        myname=name;
+        laptop_brand=brand;
+        cout<<"paramterised constructor"<<endl;
+    }
+    laptop(string name,string brand,string processor)
+    {
+        myname=name;
+        laptop_brand=brand;
+        laptop_processor=processor;
+        cout<<"parameterised constructor with 3 arguments"<<endl;
+    }
+    laptop(string name,string brand,string processor,int price)
+    {
+        myname=name;
+        laptop_brand=brand;
+        laptop_processor=processor;
+        laptop_price=price;
+        cout<<"parameterised constructor with 4 arguments"<<endl;
+    }
+    void display()
+    {
+        cout<<"laptop brand is:"<<laptop_brand<<endl;
+        cout<<"laptop processor is:"<<laptop_processor<<endl;
+        cout<<"laptop_price is:"<<laptop_price<<endl;
+    }
+    ~laptop()
+    {
+        cout<<"Destructor "<<myname<<endl;
+    }
+private:
+string myname="a";
+string laptop_brand="a";
+string laptop_processor="a";
+int laptop_price=0;
+};
+int main()
+{
+    laptop obj1;
+    obj1.display();
+    laptop obj2("first","Dell");
+    obj2.display();
+    laptop obj3("second","lenovo","Intel");
+    obj3.display();
+    laptop obj4("third","hp","AMD",50000);
+    obj4.display();
+}

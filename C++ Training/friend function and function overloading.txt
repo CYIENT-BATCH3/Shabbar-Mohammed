@@ -1,0 +1,160 @@
+#include <iostream>
+
+using namespace std;
+class Mymeter
+{
+public:
+  Mymeter();
+  Mymeter(int kw,int current,int no);
+  int getkw() const;
+  int getcurrent() const;
+//   int operator+(const Mymeter &m)
+//   {
+//       cout<<"Go to hell "<<m_no<<endl;
+//       cout<<"Who am i "<<m.m_no<<endl;
+//       int kw=m_kw+m.m_kw;
+//       int c_current=m_current+m.m_current;
+//       cout<<"Consolidated bill KW = "<<kw <<" "<<"Consolidated Current = "<<c_current<<endl;
+//       return kw;
+      
+//   }
+//ADDITION
+    Mymeter operator+(const Mymeter &m)
+  {
+      Mymeter mtemp;
+      cout<<"Go to hell "<<m_no<<endl;
+      cout<<"Who am i "<<m.m_no<<endl;
+      mtemp.m_kw=m_kw+m.m_kw;
+      mtemp.m_current=m_current+m.m_current;
+      //cout<<"Consolidated bill KW = "<<kw <<" "<<"Consolidated Current = "<<c_current<<endl;
+      return mtemp;
+      
+  }
+  //SUBSTRACTION
+  Mymeter operator-(const Mymeter &n)
+  {
+      Mymeter ntemp;
+      cout<<"********Go to heaven**********"<<m_no<<endl;
+      cout<<"*********I am shabbar**********"<<n.m_no<<endl;
+      ntemp.m_kw=m_kw-n.m_kw;
+      ntemp.m_current=m_current-n.m_current;
+      return ntemp;
+  }
+  //MULTIPLICATION
+  Mymeter operator*(const Mymeter &o)
+  {
+      Mymeter otemp;
+      cout<<"********Go to heaven*******multiplication"<<m_no<<endl;
+      cout<<"*********I am shabbar****multiplication"<<o.m_no<<endl;
+      otemp.m_kw=m_kw*o.m_kw;
+      otemp.m_current=m_current*o.m_current;
+      return otemp;
+  }
+  //DIVISION
+    Mymeter operator/(const Mymeter &p)
+  {
+      Mymeter ptemp;
+      cout<<"*********Go to heaven*******Division"<<m_no<<endl;
+      cout<<"*********I am shabbar****Division"<<p.m_no<<endl;
+      ptemp.m_kw=m_kw/p.m_kw;
+      ptemp.m_current=m_current/p.m_current;
+      return ptemp;
+  }
+  void print()
+  {
+      cout<<"Kw = "<<m_kw<<endl;
+      cout<<"Current ="<<m_current<<endl;
+  }
+  void calculate()
+  {
+      cout<<"------------------->No argument calculator" << endl;
+  }
+  void calculate(int x)
+  {
+      cout<<"------------------>value of x: "<<x<<endl;
+  }
+  void calculate(int x=0, int y=0)
+  {
+      cout<<"------------------>value of x: "<<x<<" "<< "valuee of y: "<<y<< endl;
+  }
+  friend Mymeter operator+(int x,Mymeter m);
+//method which access private members variables of a class
+  
+  
+  
+  
+  ~Mymeter();
+private:
+  int m_kw;
+  int m_current;//modify param constructor and add get method
+  int m_no;
+};
+  Mymeter operator+(int x,Mymeter m)
+  {
+      cout<<"*-*-*-*-*-*-*-*-*-*-*-*-*This method is called-*-*-*-*-*-*-*-*-*"<<endl;
+      Mymeter m1;
+      m1.m_kw=m.m_kw;
+      return m1;
+  }
+Mymeter::Mymeter()
+ {
+  cout<<"Meter "<<m_no<<endl;
+ }
+Mymeter::~Mymeter()
+ {
+  cout<<"Destructor is calleddddddddddddd "<<endl;
+ }
+ Mymeter::Mymeter(int kw,int current, int no)
+ {
+    m_kw=kw;  
+    m_no=no;
+    m_current=current;
+    cout<<"Electrical meter "<<endl;
+ }
+int Mymeter::getkw() const{
+    return m_kw;
+}
+int Mymeter::getcurrent() const
+{
+    return m_current;
+}
+int main()
+ {
+ cout<<"Electrical meters consolidation program"<<endl;
+ Mymeter m1(100,200,1);
+ Mymeter m2(200,500,2);
+ Mymeter m3(2000,5000,3);
+ int m1kw = m1.getkw();
+ int m2kw = m2.getkw();
+ 
+ int k3=m1kw+m2kw;
+ cout<<"Kilowatt value : "<<k3<<endl;
+ 
+ int m1ct=m1.getcurrent();
+ int m2ct=m2.getcurrent();
+ 
+ int c3=m1ct+m2ct;
+ cout<<"Current value : "<<c3<<endl; 
+ //int value = (m1+m2);  //m1 and m2 are user defined data type so we have to define what + operator have to do
+ //operator overloading
+ //m1.operator+(m2);   operstor+ is a function with argument of m2
+m2+m1;//m2.operator+(m1); 
+Mymeter m4=m1+m2+m3;
+cout<<"m3"<<endl;
+m3.print();
+Mymeter m5=m2-m1;
+cout<<"m5"<<endl;
+m5.print();
+Mymeter m6=m2*m1;
+m6.print();
+Mymeter m7=m2/m1;
+m7.print();
+Mymeter cal;
+//cal.calculate();
+//cal.calculate(100);
+
+Mymeter m8=200+ m5;
+cout<<"m8"<<endl;
+m8.print();
+// cal.calculate(5);
+}

@@ -1,0 +1,129 @@
+#include<iostream>
+using namespace std;
+class mobile
+{
+    public:
+    mobile()
+    {
+        cout<<"default constructor"<<endl;
+    }
+    mobile(string name, string brand)
+    {
+      myname=name;
+      mobile_brand=brand;
+      cout<<endl<<"Parameterised constructor for first class"<<endl;
+    }
+    mobile(string name,string brand, int price)
+    {
+        myname=name;
+        mobile_brand=brand;
+        mobile_price=price;
+        cout<<"Parameterised constructor for first class"<<endl;
+    }
+    mobile(string name, string brand, int price, string colour)
+    {
+        myname=name;
+       mobile_brand=brand;
+       mobile_price=price;
+       mobile_colour=colour;
+        cout<<"Parameterised constructor for third class"<<endl;
+    }
+    void display()
+    {
+        cout<<"MOBILE BRAND:"<<mobile_brand<<endl;
+        cout<<"MOBILE PRICE:"<<mobile_price<<endl;
+        cout<<"MOBILE COLOUR:"<<mobile_colour<<endl;
+        cout<<"MOBILE NUMBER:"<<mobile_number<<endl;
+        cout<<"MOBILE PROCESSOR:"<<mobile_processor<<endl;
+    }
+    ~mobile()
+    {
+        cout<<"mobile class destructor"<<" "<<myname<<endl;
+    }
+    private:
+    string mobile_brand="a";
+    int mobile_price=0;
+    string mobile_colour="blue";
+    int mobile_number=0;
+    string mobile_processor="A15";
+    string myname="mobile";
+};
+class water_bottle
+{
+    public:
+    water_bottle()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    water_bottle(string name, string brand)
+    {
+        myname=name;
+        bottle_brand=brand;
+        
+        cout<<"Paramterised constructor for class 2"<<endl;
+    }
+    water_bottle(string name,string brand,int cost)
+    {
+        myname=name;
+        bottle_brand=brand;
+        bottle_price=cost;
+        cout<<"parameterised constructor for class 2"<<endl;
+    }
+    water_bottle(string name,string brand,int cost,int capacity)
+    {
+        myname=name;
+        bottle_brand=brand;
+        bottle_price=cost;
+        bottle_capacity=capacity;
+        cout<<"parameterised constructor for class 2"<<endl;
+    }
+    void print()
+    {
+        cout<<"BOTTLE BRAND IS:"<<bottle_brand<<endl;
+        cout<<"BOTTLE COST IS:"<<bottle_price<<endl;
+        cout<<"BOTTLE CAPACITY IS:"<<bottle_capacity<<endl;
+    }
+    ~water_bottle()
+    {
+        cout<<"water_bottle class destructor"<<" "<<myname<<endl;
+    }
+    private:
+    string myname="bottle";
+    string bottle_brand="a";
+    int bottle_price=0;
+    int bottle_capacity=0;
+};
+
+int main()
+{
+    cout<<"*********CLASS 1*******"<<endl;
+    mobile obj1,obj9,obj10,obj5;
+    obj1.display();
+    mobile obj2("First","apple");
+    obj2.display();
+    mobile obj3("Second","redmi",5000);
+    obj3.display();
+    mobile obj4("Third","samsung",20000,"red");
+    obj4.display();
+    mobile obj6("Fourth","nokia");
+    obj6.display();
+    mobile obj7("Fifth","blackberry",50000);
+    obj7.display();
+    mobile obj8("Sixth","mi",10000,"black");
+    obj8.display();
+    water_bottle b1;
+    water_bottle b2("first","cool");
+    b2.print();
+    water_bottle b3("Second","bot",500);
+    b3.print();
+    water_bottle b4("third","aaa",500,10);
+    b4.print();
+    water_bottle b5("fourth","bbbb",500,10);
+    b5.print();
+    water_bottle b6("fifth","aaa");
+    b6.print();
+    water_bottle b7("sixth","aaa",200);
+    b7.print();
+    water_bottle b8,b9,b10;
+    b8.print();
+}

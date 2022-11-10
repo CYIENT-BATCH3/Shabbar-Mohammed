@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+class smart_watch
+{
+    public:
+    smart_watch()
+    {
+        cout<<"default constructors"<<endl;
+    }
+    smart_watch(string name,string type,int size,int cost)
+    {
+        myname=name;
+        watch_type=type;
+        watch_display_size=size;
+        watch_price=cost;
+        cout<<"parameterised constructor"<<endl;
+    }
+    void display()
+    {
+        cout<<"Type of watch wifi/cellular"<<watch_type<<endl;
+        cout<<"Display size is:"<<watch_display_size<<endl;
+        cout<<"price"<<watch_price<<endl;
+    }
+    ~smart_watch()
+    {
+        cout<<"destructor"<<myname<<endl;
+    }
+    private:
+    string myname;
+    string watch_type;
+    int watch_display_size;
+    int watch_price;
+};
+int main()
+{
+    smart_watch obj1,obj7,obj8;
+    smart_watch obj2("first","wifi",14,25000);
+    obj2.display();
+    smart_watch obj3("secon","wifi",14,25000);
+    obj3.display();
+    smart_watch obj4("third","wifi",14,25000);
+    obj4.display();
+    smart_watch obj5("fourth","wifi",14,25000);
+    obj5.display();
+    smart_watch obj6("fifth","wifi",14,25000);
+    obj6.display();
+}

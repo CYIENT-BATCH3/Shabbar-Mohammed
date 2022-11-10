@@ -1,0 +1,84 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class Device_manager
+{
+ public:
+  int speed=100;
+ private:
+  string company="abc";
+ protected:
+  int id=5125;
+  public:
+  Device_manager()
+  {
+      cout<<"Device manager constructor"<<endl;
+  }
+  ~Device_manager()
+  {
+      cout<<"Device manager Destructor"<<endl; 
+  }
+  void print()
+  {
+      cout<<"Speed is : " <<speed<<endl;
+      cout<<"company is : " <<company<<endl; 
+      cout<<"ID is : " <<id<<endl;
+  }
+};
+
+class Bluetooth
+{
+    public:
+    int range=100;
+    private:
+    string brand="boat";
+    protected:
+    int price=500;
+    public:
+    Bluetooth()
+    {
+         cout<<"Bluetooth constructor"<<endl;
+    }
+    ~Bluetooth()
+    {
+         cout<<"Bluetooth Destructor"<<endl;
+    }
+    void print()
+    {
+        cout<<"Range is : " <<range<<endl;
+        cout<<"Brand is : " <<brand<<endl; 
+        cout<<"Price is : " <<price<<endl;
+    }
+};
+class Keyboard:public Bluetooth,public Device_manager
+{
+    public:
+    Keyboard()
+    {
+         cout<<"Keyboard constructor"<<endl;
+    }
+    ~Keyboard()
+    {
+         cout<<"Keyboard Destructor"<<endl;
+    }
+    void print()
+    {
+        cout<<"Speed is : " <<speed<<endl;
+        //cout<<"company is : " <<company<<endl; Not accessible
+        cout<<"ID is : " <<id<<endl;
+        cout<<"Range is : " <<range<<endl;
+        //cout<<"Brand is : " <<brand<<endl;  not accessible
+        cout<<"Price is : " <<price<<endl;
+    }
+};
+int main() 
+{
+    cout<<"Welcome to inheritance"<<endl;
+    Device_manager obj;
+    obj.print();
+    Bluetooth obj2;
+    obj2.print();
+    Keyboard obj3;
+    obj3.print();
+    
+}

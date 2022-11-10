@@ -1,0 +1,149 @@
+#include <iostream>
+
+
+
+using namespace std;
+
+
+
+class Person
+{
+public:
+    Person();  //default constructor
+    Person(string name, int x);   //paramertised constructor
+    //add setter or getter methods
+    void setName(string name);
+    string getName() const;
+    void setid(int id);
+    int getid() const;
+    
+    ~Person();
+    
+    
+    private:
+    string m_name;
+    int m_uid;
+};
+
+
+
+
+Person::Person()
+{
+    cout<<" Person constructor "<<endl;
+}
+Person::Person(string name,int x)
+{
+    m_name=name;
+    m_uid=x;
+    cout<<" Person constructor "<<endl;
+}
+void Person::setName(string name)
+{
+    cout<<"setting the value"<<endl;
+    m_name=name;
+}
+
+
+
+// const- this method should modify any member variable
+string Person::getName() const
+{
+    //m_name="pooja";
+    return m_name;
+}
+
+
+
+void Person::setid(int id)
+{
+    cout<<"setting the value"<<endl;
+    m_uid=id;
+}
+
+
+
+// const- this method should modify any member variable
+int Person::getid() const
+{
+    //m_name="pooja";
+    return m_uid;
+}
+
+
+
+Person::~Person()
+{
+   // m_name="pooja";
+    cout<<" Person destructor "<<endl;
+    
+}
+
+
+
+int callme()
+{
+  cout<<"welcome to dynamic memory program"<<endl;
+  int x=200;
+  cout<< "Address of A="<<&x <<endl;
+  
+  //Person ab;
+  Person* per1 = new Person;
+  delete per1;
+  cout<<"returning from here"<<endl;
+  
+  new Person; //we cannot delete the memory
+  
+  return 10;
+}
+int main()
+{
+    //calling param-constructor
+  Person *P1=new Person("pooja",53);
+  cout<<"welcome to dynamic memory program"<<endl;
+  callme();
+  int a;
+  int *p = new int; // in the c++ new is used for object creation
+  //p=(int*)(malloc(1*sizeof(int)));
+  //p=(int*)malloc(4);//in c malloc is used for the memory allocation.
+  
+  Person *per = new Person;
+  per->setName("guru");
+  per->setid(234);
+  cout<<"my name="<<per->getName();
+  cout<<"my uid="<<per->getid();
+  delete per;
+  return 0;
+}
+
+
+
+
+int main_1()
+{
+    cout<<"welcome to dynamic memory program"<<endl;
+    int a;
+    char b;
+    string c;
+    Person per;
+    
+    cout<< "Address of A="<<&a <<endl;
+    cout<< "Address of string="<<&c <<endl;
+    cout<< "Address of string="<<&per <<endl;
+    
+    //int addressOfa = &a;
+    
+    //int* is also another datatype
+    int* myAdd=&a;
+    string* mystringAdd=&c;
+    int* md= nullptr;
+    md=(int*)(mystringAdd);
+    
+    Person* objAddress= &per;
+    
+    
+    
+    
+    callme();
+    return 0;
+}

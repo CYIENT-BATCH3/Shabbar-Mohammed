@@ -1,0 +1,193 @@
+#include <iostream>
+using namespace std;
+class hand{
+public:
+   // hand(){}
+    hand(){
+        cout<<"hand created"<<endl;
+        m_figures=0;
+        m_leftorright=0;
+    }
+    hand(int f,int lr){
+        cout<<"hand para-constructor"<<endl;
+        m_figures=f;
+        m_leftorright=lr;
+    }
+    void print(){
+        cout<<"figures ="<<m_figures<<endl;
+        cout<<"left or right :"<<m_leftorright<<endl;
+    }
+   
+    ~hand(){
+         cout<<"hand distructed"<<endl;
+    }
+    private:
+    int m_figures;
+    int m_leftorright;
+    
+};
+class eye{};
+class legs{};
+
+
+
+class person{
+    public:
+    person();
+    void print();
+    
+    ~person();
+    person(string name,int x);
+    person(const person& p); //copy constructor
+    
+    void setname(string name);
+    string getname() const;
+    
+    void setid(int id_);
+    int getid() const;
+    
+  private:
+  void createhands();
+  string m_name;
+  int m_uid;
+  hand* m_left;
+  hand* m_right;
+//   hand m_left;
+//   hand m_right; moved to para-cstructor
+};
+
+person::person(const person& p){
+    cout<<"copy constructor= "<<p.m_name<<endl;
+    m_left=new hand();  //valid pointers
+    m_right=new hand(); //valid pointers
+    m_name =p.m_name;
+    m_uid =p.m_uid;
+    
+    *m_left =*(p.m_left);
+    *m_right =*(p.m_right);
+}
+
+void person::print(){
+    cout<<"printing person= "<<m_name<<endl;
+    cout<<"left object address="<<m_left<<endl;
+    cout<<"right object address="<<m_right<<endl;
+    m_left->print();
+    m_right->print();
+}
+void person::setname(string name){
+    m_name=name;
+}
+//this method should not modify any mem- var
+string person::getname() const{
+    return m_name;
+   // m_name="naveen";
+}
+void person::setid(int id_){
+    m_uid=id_;
+}
+//this method should not modify any mem- var
+int person::getid() const{
+    return m_uid;
+   // m_name="naveen";
+}
+person::person(){
+   cout<<"person constructor"<<endl;
+    createhands();
+}
+void person::createhands(){
+     m_left=new hand(10,1);
+    m_right=new hand(10,0);
+}
+person::~person(){
+    cout<<"person destructor"<<endl;
+    delete m_left;
+    delete m_right;
+}
+person::person(string name,int x){
+    m_name=name;
+    m_uid=x;
+     cout<<"person para-constructor"<<endl;
+     createhands();
+}
+void callme(){
+    cout<<"wc to dma"<<endl;
+    int x;
+   // person ab;
+    person *per1 = new person;
+    delete per1;
+    //new person;
+    person* per2=new person("naveen",70301);
+}
+void checkp()
+{
+    cout<<"***************************"<<endl;
+    person *p=new person("akhil",20);
+    person *p2 = p;
+    cout<<"***************************"<<endl;
+}
+void createperson(){
+    person *p=new person;
+   p->print();
+   delete p;
+}
+void checkperson(){
+        person p1("akhil",200);
+        p1.print();
+        person p3;
+        cout<<"befre the loop"<<endl;
+        for(int i=0;i<1;i++){
+            person p2("chandana",3000);
+            //p3=p2;//Assignment
+            
+            person p4=p1;//while constructing
+            cout<<"******START*******"<<endl;
+            p4.print();
+            cout<<"******END*******"<<endl;
+        }
+        //p4.print();
+        cout<<"after the loop"<<endl;
+    }
+int main(){
+   cout<<"welcome human "<<endl;
+   //person obj9;
+   //createperson();
+   checkperson();
+}
+
+
+
+///........................................................
+/*int main_2()
+{
+     cout << "wellcome to dma"<<endl;
+     callme();
+     int *p=new int;
+     person *per = new person;
+     per->setname("shantha");
+cout<<"name is : "<<per->getname()<<endl;
+//person* addper =&per;
+     delete per;
+     //p=(int*)malloc(1*sizeof(int));
+     //p=(int*)malloc(4);
+     
+     //calling para-contructor
+     
+}
+int main_1() {
+  //int s;
+    cout << "wellcome to dma"<<endl;
+int a;
+string c;
+person per;
+cout << "adress a: "<<a<<endl;
+cout << "adress C: "<<&c<<endl;
+cout << "adress per: "<<&per<<endl;
+//cout << "adress addper: "<<&addper<<endl;
+//int adressA =&a;
+//int*
+int* addA =&a;
+string* addC =&c;
+cout << "adress a: "<<addA<<endl;
+callme();
+    return 0;
+}*/

@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+class House
+{
+  public:
+  House()
+  {
+      cout<<"Default constructor"<<endl;
+  }
+  House(string name,int floors,int rooms,int cost)
+  {
+      myname=name;
+      number_of_floors=floors;
+      number_of_rooms=rooms;
+      price=cost;
+      cout<<"Parameterised constructor"<<endl;
+  }
+  void print()
+  {
+      cout<<"Number of floor"<<number_of_floors<<endl;
+      cout<<"Number of rooms"<<number_of_rooms<<endl;
+      cout<<"price of house "<<price<<endl;
+  }
+  ~House()
+  {
+      cout<<"Destructor"<<endl;
+  }
+  private:
+  string myname;
+  int number_of_floors;
+  int number_of_rooms;
+  int price;
+};
+int main()
+{
+    House obj1;
+    House obj2("first",5,10,500000);
+    obj2.print();
+    House obj3("second",10,15,600000);
+    obj3.print();
+    House obj4("third",10,15,600000);
+    obj4.print();
+    House obj5("fourth",10,15,600000);
+    obj5.print();
+    House obj6("fifth",10,15,700000);
+    obj6.print();
+    
+}

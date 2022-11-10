@@ -1,0 +1,66 @@
+#include<iostream>
+using namespace std;
+class water_bottle
+{
+    public:
+    water_bottle()
+    {
+        cout<<"Default constructor"<<endl;
+    }
+    water_bottle(string name, string brand)
+    {
+        myname=name;
+        bottle_brand=brand;
+        
+        cout<<"Paramterised constructor for class 2"<<endl;
+    }
+    water_bottle(string name,string brand,int cost)
+    {
+        myname=name;
+        bottle_brand=brand;
+        bottle_price=cost;
+        cout<<"parameterised constructor for class 2"<<endl;
+    }
+    water_bottle(string name,string brand,int cost,int capacity)
+    {
+        myname=name;
+        bottle_brand=brand;
+        bottle_price=cost;
+        bottle_capacity=capacity;
+        cout<<"parameterised constructor for class 2"<<endl;
+    }
+    void print()
+    {
+        cout<<"BOTTLE BRAND IS:"<<bottle_brand<<endl;
+        cout<<"BOTTLE COST IS:"<<bottle_price<<endl;
+        cout<<"BOTTLE CAPACITY IS:"<<bottle_capacity<<endl;
+    }
+    ~water_bottle()
+    {
+        cout<<"water_bottle class destructor"<<" "<<myname<<endl;
+    }
+    private:
+    string myname="bottle";
+    string bottle_brand="a";
+    int bottle_price=0;
+    int bottle_capacity=0;
+};
+
+int main()
+{
+    water_bottle b1;
+    water_bottle b2("first","cool");
+    b2.print();
+    water_bottle b3("Second","bot",500);
+    b3.print();
+    water_bottle b4("third","aaa",500,10);
+    b4.print();
+    water_bottle b5("fourth","bbbb",500,10);
+    b5.print();
+    water_bottle b6("fifth","aaa");
+    b6.print();
+    water_bottle b7("sixth","aaa",200);
+    b7.print();
+    water_bottle b8,b9,b10;
+    b8.print();
+}
