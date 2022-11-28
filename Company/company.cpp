@@ -2,8 +2,8 @@
 #include "employeemanagement.h"
 #include<iostream>
 #include"employee.h"
-#include"developer.h"
-#include"manager.h"
+//#include"developer.h"
+//#include"manager.h"
 using namespace std;
 
 Company::Company()
@@ -17,10 +17,7 @@ Company::Company(string CompanyName, string CompanyAddress)
     m_CompanyAddress = CompanyAddress;
     cout<<"Parameterised constructor of Company is Called"<<endl;
 }
-//void Company::assignTask(Task *t)
-//{
-//    m_TaskVariable = t;
-//}
+
 Company::~Company()
 {
     cout<<"Destructor of Employee is Called"<<endl;
@@ -49,8 +46,9 @@ void Company::Management()
         cin>>salary;
         m_ManagerObject = new Manager(name,id,salary);
         m_ManagerObject->print();
-        CreatingAtask();
-        Assign();
+        //m_ManagerObject->
+        //CreatingAtask();
+        //Assign();
 
 
 //    int choice;
@@ -79,31 +77,41 @@ void Company::Management()
 //    {
 //        cout<<"Enter A valid Number"<<endl;
 //    }
-}void Company::Assign()
+}
+void Company::assignTask(Developer* Dev,int value)
+{
+    Dev = m_DeveloperObject[value];
+}
+
+
+
+
+/*void Company::Assign()
 {
     for(int i=0;i<NumberOfDevelopers;i++)
     {
 
     m_DeveloperObject[i]->assignTask(m_task[i]);
     m_DeveloperObject[i]->print();
-    m_task[i]->printTaskDetails();
 
     }
-}
-void Company::CreatingAtask()
-{
-    cout<<"Enter the Number of Tasks You Want To Create"<<endl;
-    cin>>m_NumberOfTasks;
-    cout<<"Enter the Task Name and Task Duration"<<endl;
-    cin>>TaskName;
-    cin>>TaskDuration;
+}*/
+//void Company::CreatingAtask()
+//{
+//    cout<<"Enter the Number of Tasks You Want To Create"<<endl;
+//    cin>>m_NumberOfTasks;
 
-    for(int i=0;i<m_NumberOfTasks;i++)
-    {
-        m_task[i] = new Task;
-        m_task[i]->setTaskName(TaskName);
-        m_task[i]->setTaskDuration(TaskDuration);
+//    for(int i=0;i<m_NumberOfTasks;i++)
+//    {
 
-    }
-}
+//        cout<<"Enter the Task Name and Task Duration"<<endl;
+//        cin>>TaskName;
+//        cin>>TaskDuration;
+
+//        m_task[i] = new Task;
+//        m_task[i]->setTaskName(TaskName);
+//        m_task[i]->setTaskDuration(TaskDuration);
+
+//    }
+//}
 

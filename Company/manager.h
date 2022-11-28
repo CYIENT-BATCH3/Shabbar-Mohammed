@@ -2,6 +2,7 @@
 #define MANAGER_H
 
 #include"employee.h"
+#include"developer.h"
 #include"task.h"
 class Manager:public Employee
 {
@@ -14,12 +15,13 @@ public:
     string getManagerId()const;
     void setManagerSalary(const string ManagerSalary);
     string getManagerSalary()const;
-    void assignTask(Task *t);
-//    Manager(Task* task__);
+    void CreatingTaskObjects();
+    void ManagerassignTask(Task *t);
+//   Manager(Task* task__);
 
     ~Manager();
 private:
-//    Task* task;
+    Task* m_task[10];
     string m_ManagerName,m_ManagerId, m_ManagerSalary;
     Task* m_TaskVariable;
 

@@ -37,10 +37,19 @@ string Manager::getManagerSalary() const
 {
     return m_ManagerSalary;
 }
-//void Manager::assignTask(Task *t)
-//{
-//    m_TaskVariable = t;
-//}
+void Manager::ManagerassignTask(Task *t,int value)
+{
+
+     t= m_task[value];
+
+}
+void Manager::CreatingTaskObjects()
+{
+    for(int i=0;i<10;i++)
+    {
+        m_task[i] = new Task;
+    }
+}
 Manager::~Manager()
 {
     cout<<"Destructor of Manager is Called"<<endl;

@@ -2,6 +2,7 @@
 #define EMPLOYEE_H
 #include"string.h"
 #include"task.h"
+#include"developer.h"
 #include<iostream>
 using namespace std;
 
@@ -16,7 +17,7 @@ public:
     string getEmployeeId()const;
     void setEmployeeSalary(const string EmployeeSalary);
     string getEmployeeSalary()const;
-    void assignTask(Task *t);
+    void assignTask(Developer* Dev,int Value);
     void print();
     ~Employee();
 protected:

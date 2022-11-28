@@ -35,9 +35,9 @@ string Employee::getEmployeeSalary() const
 {
     return m_EmployeeSalary;
 }
-void Employee::assignTask(Task *t)
+void Employee::assignTask(Developer* Dev,int value)
 {
-    m_TaskVariable = t;
+    Dev =
 }
 void Employee::print()
 {

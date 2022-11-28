@@ -9,9 +9,9 @@ public:
     Company();
     Company(string CompanyName, string CompanyAddress);
     void Management();
-    void CreatingAtask();
-//    void assignTask(Task *t);
-    void Assign();
+    //void CreatingAtask();
+    void assignTask(Developer* Dev,int value);
+   // void Assign();
     ~Company();
 private:
     string m_CompanyName,m_CompanyAddress;
@@ -19,7 +19,7 @@ private:
     Employee* m_DeveloperObject[10];
     Employee* m_ManagerObject;
     //Manager *m_task[100];
-    Task* m_task[100];
+    //Task* m_task[100];
     Task* m_TaskVariable;
     string TaskName,TaskDuration;
 };

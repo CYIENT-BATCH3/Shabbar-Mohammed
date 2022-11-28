@@ -13,6 +13,7 @@ public:
     string getDeveloperId()const;
     void setDeveloperSalary(const string DeveloperSalary);
     string getDeveloperSalary()const;
+    void assignFunction();
     void printDeveloperDetails();
     ~Developer();
 
