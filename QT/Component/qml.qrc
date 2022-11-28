@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MyButton.qml</file>
+        <file>MyMonitor.qml</file>
+        <file>View.qml</file>
+        <file>Develop.qml</file>
+        <file>Design.qml</file>
+    </qresource>
+</RCC>
