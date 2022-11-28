@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>FirstAnimaton.qml</file>
+        <file>SecondAnimation.qml</file>
+        <file>ThirdAnimation.qml</file>
+        <file>FourthAnimation.qml</file>
+        <file>sha.png</file>
+        <file>Rocket.png</file>
+    </qresource>
+</RCC>
