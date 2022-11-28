@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>mylogin.h</file>
+        <file>mylogin.cpp</file>
+    </qresource>
+</RCC>
